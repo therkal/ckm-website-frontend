@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Nature",
+        "image": "../../../assets/wildlife-landscape-1.jpg",
+        "imageAlt": "Squirrel Throne"
+    },
+    {
+        "name": "Landscape",
+        "image": "../../../assets/wildlife-landscape-2.jpg",
+        "imageAlt": "Squirrel Throne"
+    },
+    {
+        "name": "Architecture",
+        "image": "../../../assets/architecture-landscape1.jpg",
+        "imageAlt": "Squirrel Throne"
+    }
+]

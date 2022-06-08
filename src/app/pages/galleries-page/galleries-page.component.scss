@@ -1,0 +1,18 @@
+.gallery-item {
+    position: relative;
+}
+
+.gallery-info {
+    color: white;
+    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: none;
+    transition: 0.2s all ease;
+}
+
+.gallery-item:hover .gallery-info{
+    display: block;
+    transition: 0.2s all ease;
+}
