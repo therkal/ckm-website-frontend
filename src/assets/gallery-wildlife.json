@@ -8,7 +8,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Kenneth Martens",
+        "author": "Kenneth Martens",
         "tags": [
             "Wildife",
             "Squirrel",
@@ -24,7 +24,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Kenneth Martens",
+        "author": "Kenneth Martens",
         "tags": [
             "Wildife",
             "Prairie Chicken",
@@ -41,7 +41,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Corrina Martens",
+        "author": "Corrina Martens",
         "tags": [
             "Wildife",
             "Prairie Chicken",
@@ -58,7 +58,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Corrina Martens",
+        "author": "Corrina Martens",
         "tags": [
             "Wildife",
             "Sheep",
@@ -74,7 +74,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Kenneth Martens",
+        "author": "Kenneth Martens",
         "tags": [
             "Wildife",
             "Avian",
@@ -90,7 +90,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Corrina Martens",
+        "author": "Corrina Martens",
         "tags": [
             "Wildife",
             "Avian",
@@ -106,7 +106,7 @@
                 "lat": "",
                 "lon": ""
         },
-        "photographer": "Kenneth Martens",
+        "author": "Kenneth Martens",
         "tags": [
             "Wildife",
             "Warbler",
