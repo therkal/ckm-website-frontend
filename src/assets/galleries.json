@@ -13,5 +13,21 @@
         "name": "Architecture",
         "image": "../../../assets/architecture-landscape1.jpg",
         "imageAlt": "Squirrel Throne"
+    },
+    {
+        "name": "Another category",
+        "image": "../../../assets/wildlife-landscape-2.jpg",
+        
+        "imageAlt": "Squirrel Throne"
+    },
+    {
+        "name": "A very long category that keeps on going on and on and on and on",
+        "image": "../../../assets/wildlife-landscape-1.jpg",
+        "imageAlt": "Squirrel Throne"
+    },
+    {
+        "name": "Chickenwings",
+        "image": "../../../assets/architecture-landscape1.jpg",
+        "imageAlt": "Squirrel Throne"
     }
 ]
