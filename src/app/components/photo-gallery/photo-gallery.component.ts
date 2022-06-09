@@ -1,4 +1,8 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, RouteConfigLoadEnd } from '@angular/router';
+import { map, Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-photo-gallery',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoGalleryComponent implements OnInit {
 
-  constructor() { }
+  photos: Observable<any> = new Observable();
+
+  constructor(private route: ActivatedRoute, private client: HttpClient) { }
 
   ngOnInit(): void {
+    this.photos = this.route.paramMap.pipe(
+      // Get the ID from the param map
+      map(params => params.get("id")),
+      // Switch to another observable to get the data.
+      switchMap(id => this.client.get('/assets/gallery-' + id + ".json"))
+    );
   }
 
 }

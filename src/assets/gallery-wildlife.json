@@ -1,0 +1,117 @@
+[
+    {
+        "name": "Squirrel Throne",
+        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "Jacques Cartier",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Squirrel",
+            "Canada"
+        ]
+    },
+    {
+        "name": "The Showdown",
+        "image": "../../../assets/Wildlife/wildlife-portrait-1.jpg",
+        "orientation": "Portrait",
+        "location": { 
+                "name": "Somewhere in Illinois",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Prairie Chicken",
+            "Avian",
+            "Illinois"
+        ]
+    },
+    {
+        "name": "Ready, Set, Fight",
+        "image": "../../../assets/Wildlife/wildlife-landscape-3.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "Somewhere in Illinois",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Corrina Martens",
+        "tags": [
+            "Wildife",
+            "Prairie Chicken",
+            "Avian",
+            "Illinois"
+        ]
+    },
+    {
+        "name": "Uninvited Horns",
+        "image": "../../../assets/Wildlife/wildlife-portrait-2.jpg",
+        "orientation": "Portrait",
+        "location": { 
+                "name": "Badlands NP",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Corrina Martens",
+        "tags": [
+            "Wildife",
+            "Sheep",
+            "Illinois"
+        ]
+    },
+    {
+        "name": "Nectar, but not a nectarine",
+        "image": "../../../assets/Wildlife/wildlife-landscape-2.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "Montrose Point, Chicago",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Avian",
+            "Illinois"
+        ]
+    },
+    {
+        "name": "Green Heron",
+        "image": "../../../assets/Wildlife/wildlife-landscape-4.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "North Pond, Chicago",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Corrina Martens",
+        "tags": [
+            "Wildife",
+            "Avian",
+            "Illinois"
+        ]
+    },
+    {
+        "name": "The Leap",
+        "image": "../../../assets/Wildlife/wildlife-portrait-3.jpg",
+        "orientation": "Portrait",
+        "location": { 
+                "name": "Montrose Point, Chicago",
+                "lat": "",
+                "lon": ""
+        },
+        "photographer": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Warbler",
+            "Avian",
+            "Illinois"
+        ]
+    }
+]

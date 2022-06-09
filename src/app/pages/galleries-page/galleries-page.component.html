@@ -1,10 +1,5 @@
 <div class="container mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3">
-        <div *ngFor="let gallery of galleries" class="gallery-item">
-            <div class="gallery-info p-2 flex">
-                <span class="basis-full">{{gallery.name}}</span>
-            </div>
-            <img src="{{gallery.image}}" objectFit="cover" alt="{{gallery.imageAlt}}">
-        </div>
+        <app-gallery-item *ngFor="let gallery of galleries" [galleryItem]="gallery" routerLink="{{gallery.id}}"></app-gallery-item>
     </div>
 </div>

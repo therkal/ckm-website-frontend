@@ -1,33 +1,32 @@
 [
     {
-        "name": "Nature",
-        "image": "../../../assets/wildlife-landscape-1.jpg",
-        "imageAlt": "Squirrel Throne"
+        "id": "2022dakota",
+        "name": "North- and South Dakota 2022",
+        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg"
     },
     {
+        "id": "2021airzona",
+        "name": "Arizona 2021",
+        "image": "../../../assets/Wildlife/wildlife-landscape-2.jpg"
+    },
+    {
+        "id": "2021quebec",
+        "name": "Quebec 2021",
+        "image": "../../../assets/Wildlife/wildlife-landscape-3.jpg"
+    },
+    {
+        "id": "2021france",
+        "name": "France 2021",
+        "image": "../../../assets/Wildlife/wildlife-landscape-4.jpg"
+    },
+    {
+        "id": "wildlife",
+        "name": "Wildlife",
+        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg"
+    },
+    {
+        "id": "landscape",
         "name": "Landscape",
-        "image": "../../../assets/wildlife-landscape-2.jpg",
-        "imageAlt": "Squirrel Throne"
-    },
-    {
-        "name": "Architecture",
-        "image": "../../../assets/architecture-landscape1.jpg",
-        "imageAlt": "Squirrel Throne"
-    },
-    {
-        "name": "Another category",
-        "image": "../../../assets/wildlife-landscape-2.jpg",
-        
-        "imageAlt": "Squirrel Throne"
-    },
-    {
-        "name": "A very long category that keeps on going on and on and on and on",
-        "image": "../../../assets/wildlife-landscape-1.jpg",
-        "imageAlt": "Squirrel Throne"
-    },
-    {
-        "name": "Chickenwings",
-        "image": "../../../assets/architecture-landscape1.jpg",
-        "imageAlt": "Squirrel Throne"
+        "image": "../../../assets/Wildlife/wildlife-landscape-2.jpg"
     }
 ]
