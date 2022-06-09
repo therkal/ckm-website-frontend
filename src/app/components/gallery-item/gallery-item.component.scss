@@ -1,6 +1,8 @@
 .gallery-item {
     position: relative;
     cursor: pointer;
+    height: 100%;
+    background-color: #212121; // ToDo: Image loading gradient?
 }
 
 .gallery-info {
@@ -25,4 +27,9 @@
     opacity: 1;
     transition: 0.2s all cubic-bezier(0.65, 0.05, 0.36, 1);
     height: auto;
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
 }
