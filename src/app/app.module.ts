@@ -9,6 +9,7 @@ import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-directive.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
