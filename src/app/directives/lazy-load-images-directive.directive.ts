@@ -10,6 +10,7 @@ export class LazyLoadImagesDirectiveDirective {
       nativeElement.setAttribute('loading', 'lazy');
     } else {
       // ToDo: Implementation for unsupported browsers?
+      // ToDo: Intersection Observer is an alternative way.
     }
   }
 

@@ -7,11 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GalleryItemComponent implements OnInit {
 
+  isLoading: Boolean = true;
+
   @Input() galleryItem: any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onLoad() {
+    this.isLoading = false;
   }
 
 }

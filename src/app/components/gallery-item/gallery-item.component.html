@@ -1,10 +1,14 @@
-<div class="gallery-item">
-    <div class="gallery-info gallery-item-info p-2 top-0">
-        <span class="basis-full">{{galleryItem.name}}</span>
+<div class="gallery-item bg-slate-200" [ngClass]="{'animate-pulse': isLoading}">
+
+    <div class="gallery-item-loaded-content" style="height: 100%;" [ngClass]="{'invisible': isLoading}">
+        <div class="gallery-info gallery-item-info p-2 top-0">
+            <span class="basis-full">{{galleryItem.name}}</span>
+        </div>
+        <img src="{{galleryItem.image}}" alt="{{galleryItem.name}}" (load)="onLoad()">
+        <div class="gallery-item-author-info gallery-item-info bottom-0 p-2" *ngIf="galleryItem.author">
+            <img class="persona" src="../../../assets/persona/{{galleryItem.author}}.jpg">
+            <span>{{galleryItem.author}}</span>
+        </div>
     </div>
-    <img src="{{galleryItem.image}}" alt="{{galleryItem.name}}">
-    <div class="gallery-item-author-info gallery-item-info bottom-0 p-2" *ngIf="galleryItem.author">
-        <img class="persona" src="../../../assets/persona/{{galleryItem.author}}.jpg">
-        <span>{{galleryItem.author}}</span>
-    </div>
+    
 </div>
