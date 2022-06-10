@@ -8,6 +8,7 @@ import { GalleriesPageComponent } from './pages/galleries-page/galleries-page.co
 import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
+import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-directive.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GalleryItemComponent } from './components/gallery-item/gallery-item.com
     NavBarComponent,
     GalleriesPageComponent,
     PhotoGalleryComponent,
-    GalleryItemComponent
+    GalleryItemComponent,
+    LazyLoadImagesDirectiveDirective
   ],
   imports: [
     BrowserModule,
