@@ -1,7 +1,6 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouteConfigLoadEnd } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { map, Observable, switchMap } from 'rxjs';
 
 @Component({
