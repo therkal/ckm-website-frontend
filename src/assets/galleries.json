@@ -7,26 +7,26 @@
     {
         "id": "2021airzona",
         "name": "Arizona 2021",
-        "image": "../../../assets/Wildlife/wildlife-landscape-2.jpg"
+        "image": "../../../assets/2022Dakota/landscape-1.jpg"
     },
     {
         "id": "2021quebec",
         "name": "Quebec 2021",
-        "image": "../../../assets/Wildlife/wildlife-landscape-3.jpg"
+        "image": "../../../assets/2022Dakota/landscape-2.jpg"
     },
     {
         "id": "2021france",
         "name": "France 2021",
-        "image": "../../../assets/Wildlife/wildlife-landscape-4.jpg"
+        "image": "../../../assets/2022Dakota/landscape-3.jpg"
     },
     {
         "id": "wildlife",
         "name": "Wildlife",
-        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg"
+        "image": "../../../assets/2022Dakota/landscape-4.jpg"
     },
     {
         "id": "landscape",
         "name": "Landscape",
-        "image": "../../../assets/Wildlife/wildlife-landscape-2.jpg"
+        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg"
     }
 ]
