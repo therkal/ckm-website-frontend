@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Squirrel Throne",
+        "image": "../../../assets/Wildlife/wildlife-landscape-1.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "Jacques Cartier",
+                "lat": "",
+                "lon": ""
+        },
+        "author": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Squirrel",
+            "Canada"
+        ]
+    },
+    {
+        "name": "Close-up of a Bison",
+        "image": "../../../assets/Wildlife/wildlife-portrait-4.jpg",
+        "orientation": "Portrait",
+        "location": { 
+                "name": "Badlands NP",
+                "lat": "",
+                "lon": ""
+        },
+        "author": "Corrina Martens",
+        "tags": [
+            "Wildife"
+        ]
+    },
+    {
+        "name": "The Showdown",
+        "image": "../../../assets/Wildlife/wildlife-portrait-1.jpg",
+        "orientation": "Portrait",
+        "location": { 
+                "name": "Somewhere in Illinois",
+                "lat": "",
+                "lon": ""
+        },
+        "author": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Prairie Chicken",
+            "Avian",
+            "Illinois"
+        ]
+    }
+]
