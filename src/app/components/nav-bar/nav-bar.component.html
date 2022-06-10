@@ -1,7 +1,25 @@
 <nav id="header" class="fixed w-full z-30 top-0 border-b">
     <div class="flex flex-row justify-between p-6">
-        <a routerLink="/"><h1 class="basis-1/4 uppercase text-xl">CKM Photography</h1></a>
+        <div class="basis-1/4">
+            <a routerLink="/"><h1 class="uppercase text-xl">CKM Photography</h1></a>
+        </div>
         <!-- ToDo: Mobile menu -->
+        <section class="mobile-menu md:hidden">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="space-y-2 hamburger-lines" id="hamburger-menu-icon">
+                <span class="block w-7 h-0.5 bg-gray-600 line1"></span>
+                <span class="block w-7 h-0.5 bg-gray-600 line2"></span>
+                <span class="block w-7 h-0.5 bg-gray-600 line3"></span>
+            </div>
+
+            <div class="mobile-menu-items mt-9">
+                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery">Gallery</button>
+                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about">Trips</button>
+                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/blog">About</button>
+                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/blog">Blog</button>
+            </div>
+        </section>
+
         <div class="basis-2/4 flex justify-center hidden md:flex">
             <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery">Gallery</button>
             <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about">Trips</button>
