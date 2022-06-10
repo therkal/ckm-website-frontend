@@ -3,7 +3,6 @@
         <div class="basis-1/4">
             <a routerLink="/" (click)="isMenuOpen = false"><h1 class="uppercase text-xl">CKM Photography</h1></a>
         </div>
-        <!-- ToDo: Mobile menu -->
         <section class="mobile-menu md:hidden">
             <input class="checkbox" type="checkbox" name="menu-open" id="open-menu" [(ngModel)]="isMenuOpen" />
             <div class="space-y-2 hamburger-lines" id="hamburger-menu-icon">
@@ -12,6 +11,7 @@
                 <span class="block w-7 h-0.5 bg-gray-600 line3"></span>
             </div>
 
+            <!-- ToDo: Load menu from file -->
             <div class="mobile-menu-items mt-9">
                 <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery" (click)="isMenuOpen = false">Gallery</button>
                 <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about" (click)="isMenuOpen = false">Trips</button>
@@ -21,6 +21,7 @@
         </section>
 
         <div class="basis-2/4 flex justify-center hidden md:flex">
+            <!-- ToDo: Load menu from file -->
             <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery">Gallery</button>
             <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about">Trips</button>
             <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/blog">About</button>
