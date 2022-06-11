@@ -10,6 +10,7 @@ export class GalleryItemComponent implements OnInit {
   isLoading: Boolean = true;
 
   @Input() galleryItem: any;
+  @Input() isGallery: Boolean = false;
 
   constructor() { }
 

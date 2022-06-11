@@ -60,6 +60,21 @@
         ]
     },
     {
+        "name": "Bighorn Sheep at Dusk",
+        "image": "../../../assets/2022Dakota/landscape-5.jpg",
+        "orientation": "Landscape",
+        "location": { 
+                "name": "Badlands NP",
+                "lat": "",
+                "lon": ""
+        },
+        "author": "Kenneth Martens",
+        "tags": [
+            "Wildife",
+            "Sheep"
+        ]
+    },
+    {
         "name": "u wot m8?!?",
         "image": "../../../assets/2022Dakota/portrait-2.jpg",
         "orientation": "Portrait",

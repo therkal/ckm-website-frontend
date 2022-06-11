@@ -1,14 +1,22 @@
 <div class="gallery-item bg-slate-200" [ngClass]="{'animate-pulse': isLoading}">
 
     <div class="gallery-item-loaded-content" style="height: 100%;" [ngClass]="{'invisible': isLoading}">
-        <div class="gallery-info gallery-item-info p-2 top-0">
-            <span class="basis-full">{{galleryItem.name}}</span>
-        </div>
+        <span class="gallery-item-info p-2 top-0"
+            *ngIf="this.isGallery; else animationHeader">{{galleryItem.name}}</span>
+
         <img src="{{galleryItem.image}}" alt="{{galleryItem.name}}" (load)="onLoad()">
-        <div class="gallery-item-author-info gallery-item-info bottom-0 p-2" *ngIf="galleryItem.author">
+
+        <div class="gallery-item-author-info gallery-item-info gallery-info-animationable bottom-0 p-2"
+            *ngIf="galleryItem.author">
             <img class="persona" src="../../../assets/persona/{{galleryItem.author}}.jpg">
             <span>{{galleryItem.author}}</span>
         </div>
     </div>
-    
+
 </div>
+
+<ng-template #animationHeader>
+    <div class="gallery-info gallery-info-animationable gallery-item-info p-2 top-0">
+        <span class="basis-full">{{galleryItem.name}}</span>
+    </div>
+</ng-template>
