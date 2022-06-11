@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-directive.directive';
 import { FormsModule } from '@angular/forms';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     GalleriesPageComponent,
     PhotoGalleryComponent,
     GalleryItemComponent,
-    LazyLoadImagesDirectiveDirective
+    LazyLoadImagesDirectiveDirective,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
