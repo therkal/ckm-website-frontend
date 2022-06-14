@@ -74,9 +74,9 @@
         ]
     },
     {
-        "name": "The Peak",
-        "image": "../../../assets/2022Dakota/portrait-3.jpg",
-        "orientation": "Portrait",
+        "name": "The Attack",
+        "image": "../../../assets/2022Dakota/landscape-4.jpg",
+        "orientation": "Landscape",
         "location": {
             "name": "Badlands NP",
             "lat": "",
@@ -102,9 +102,9 @@
         ]
     },
     {
-        "name": "The Attack",
-        "image": "../../../assets/2022Dakota/landscape-4.jpg",
-        "orientation": "Landscape",
+        "name": "The Peak",
+        "image": "../../../assets/2022Dakota/portrait-3.jpg",
+        "orientation": "Portrait",
         "location": {
             "name": "Badlands NP",
             "lat": "",

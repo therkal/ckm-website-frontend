@@ -1,7 +1,30 @@
+@use 'src/app/shared/variables' as global;
+
+
+/** Tailwind LG screen */
+@media (min-width: 1024px) {
+    .image-overlay-landing-screen {
+        height: calc(100vh - 2 * global.$top-nav-bar-height);
+    }
+
+}
+
+.image-with-overlay-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
 .image-with-overlay-container>.image-overlay {
     position: absolute;
-    width: 100%;
     height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
+}
+
+.image-with-overlay-container>img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
