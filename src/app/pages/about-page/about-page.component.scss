@@ -10,7 +10,6 @@ main {
 
 section {
     transform-style: preserve-3d;
-    min-height: 60vh;
 }
 
 /** Tailwind LG screen */
@@ -28,6 +27,10 @@ section {
         object-fit: cover;
         height: 256px !important;
         width: 256px !important;
+    }
+
+    section {
+        min-height: 60vh;
     }
 }
 
