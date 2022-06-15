@@ -1,14 +1,14 @@
 [
     {
         "name": "Willow",
-        "imageUrl": "../../assets/persona/Willow.jpg"
+        "imageUrl": "../../../photography-website/assets/persona/Willow.jpg"
     },
     {
         "name": "Stevie",
-        "imageUrl": "../../assets/persona/Stevie.jpg"
+        "imageUrl": "../../../photography-website/assets/persona/Stevie.jpg"
     },
     {
         "name": "Rou",
-        "imageUrl": "../../assets/persona/Rou.jpg"
+        "imageUrl": "../../../photography-website/assets/persona/Rou.jpg"
     }
 ]

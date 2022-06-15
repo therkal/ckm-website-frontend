@@ -1,7 +1,7 @@
 [
     {
         "name": "Squirrel Throne",
-        "image": "../../assets/Wildlife/wildlife-landscape-1.jpg",
+        "image": "../../../photography-website/assets/Wildlife/wildlife-landscape-1.jpg",
         "orientation": "Landscape",
         "location": {
             "name": "Jacques Cartier",
@@ -17,7 +17,7 @@
     },
     {
         "name": "Close-up of a Bison",
-        "image": "../../assets/Wildlife/wildlife-portrait-4.jpg",
+        "image": "../../../photography-website/assets/Wildlife/wildlife-portrait-4.jpg",
         "orientation": "Portrait",
         "location": {
             "name": "Badlands NP",
@@ -31,7 +31,7 @@
     },
     {
         "name": "The Showdown",
-        "image": "../../assets/Wildlife/wildlife-portrait-1.jpg",
+        "image": "../../../photography-website/assets/Wildlife/wildlife-portrait-1.jpg",
         "orientation": "Portrait",
         "location": {
             "name": "Somewhere in Illinois",
