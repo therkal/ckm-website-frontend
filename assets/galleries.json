@@ -1,32 +1,32 @@
 [
     {
         "id": "2022dakota",
-        "name": "North and South Dakota 2022",
-        "image": "/assets/2022Dakota/landscape-6.jpg"
+        "title": "North and South Dakota 2022",
+        "imageUrl": "/2022Dakota/landscape-6.jpg"
     },
     {
         "id": "2021airzona",
-        "name": "Arizona 2021",
-        "image": "/assets/2022Dakota/landscape-1.jpg"
+        "title": "Arizona 2021",
+        "imageUrl": "/2022Dakota/landscape-1.jpg"
     },
     {
         "id": "2021quebec",
-        "name": "Quebec 2021",
-        "image": "/assets/Wildlife/wildlife-landscape-1.jpg"
+        "title": "Quebec 2021",
+        "imageUrl": "/Wildlife/wildlife-landscape-1.jpg"
     },
     {
         "id": "2021france",
-        "name": "France 2021",
-        "image": "/assets/2022Dakota/landscape-3.jpg"
+        "title": "France 2021",
+        "imageUrl": "/2022Dakota/landscape-3.jpg"
     },
     {
         "id": "wildlife",
-        "name": "Wildlife",
-        "image": "/assets/2022Dakota/landscape-4.jpg"
+        "title": "Wildlife",
+        "imageUrl": "/2022Dakota/landscape-4.jpg"
     },
     {
         "id": "landscape",
-        "name": "Landscape",
-        "image": "/assets/Wildlife/wildlife-landscape-1.jpg"
+        "title": "Landscape",
+        "imageUrl": "/Wildlife/wildlife-landscape-1.jpg"
     }
 ]

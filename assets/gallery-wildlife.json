@@ -1,10 +1,10 @@
 [
     {
-        "name": "Squirrel Throne",
-        "image": "/assets/Wildlife/wildlife-landscape-1.jpg",
+        "title": "Squirrel Throne",
+        "imageUrl": "/Wildlife/wildlife-landscape-1.jpg",
         "orientation": "Landscape",
         "location": {
-            "name": "Jacques Cartier",
+            "geoLocationtitle": "Jacques Cartier",
             "lat": "",
             "lon": ""
         },
@@ -16,11 +16,11 @@
         ]
     },
     {
-        "name": "Close-up of a Bison",
-        "image": "/assets/Wildlife/wildlife-portrait-4.jpg",
+        "title": "Close-up of a Bison",
+        "imageUrl": "/Wildlife/wildlife-portrait-4.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationtitle": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -30,11 +30,11 @@
         ]
     },
     {
-        "name": "The Showdown",
-        "image": "/assets/Wildlife/wildlife-portrait-1.jpg",
+        "title": "The Showdown",
+        "imageUrl": "/Wildlife/wildlife-portrait-1.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Somewhere in Illinois",
+            "geoLocationtitle": "Somewhere in Illinois",
             "lat": "",
             "lon": ""
         },

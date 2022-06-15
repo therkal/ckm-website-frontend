@@ -1,12 +1,12 @@
 [
     {
         "name": "Kenneth",
-        "imageUrl": "/assets/persona/Kenneth Martens.jpg",
+        "imageUrl": "/persona/Kenneth Martens.jpg",
         "biography": "Kenneth studied Software Engineering at Fontys University of Applies Sciences in Eindhoven. He is working as a software engineer by trade. He works as a backend developer in an event-based microservices application.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum."
     },
     {
         "name": "Corrina",
-        "imageUrl": "/assets/persona/Corrina Martens.jpg",
+        "imageUrl": "/persona/Corrina Martens.jpg",
         "biography": "Corrina double majored in Zoology and Environmental Science at Miami University, whe re she graduated with her Bachelor’s Degree in 2013. As an undergraduate, she did research on the genetic diversity of the European wall lizard and interactions with adenylate cyclase toxins. After graduation, she attended the University of Cincinnati to pursue her Master of Science in Biological Sciences, with a focus in Reproductive Biology. She was awarded the University Graduate Scholarship for doing research in collaboration with the Cincinnati Zoo & Botanic Garden and Cincinnati Children’s Hospital on polar bear reproduction."
     }
 ]
