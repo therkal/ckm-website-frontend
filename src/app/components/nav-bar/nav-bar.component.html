@@ -15,13 +15,13 @@
 
             <div class="mobile-menu-items">
                 <button class="px-2 uppercase hover:underline text-sm md:text-base"
-                    *ngFor="let item of menuItems | async" routerLink="{{item.routerLink}}"
+                    *ngFor="let item of menuItems$ | async" routerLink="{{item.routerLink}}"
                     (click)="isMenuOpen = false">{{item.name}}</button>
             </div>
         </section>
 
         <div class="basis-2/4 flex justify-center hidden lg:flex">
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" *ngFor="let item of menuItems | async"
+            <button class="px-2 uppercase hover:underline text-sm md:text-base" *ngFor="let item of menuItems$ | async"
                 routerLink="{{item.routerLink}}" (click)="isMenuOpen = false">{{item.name}}</button>
         </div>
         <div class="basis-1/4 flex justify-end hidden lg:flex" id="socials">

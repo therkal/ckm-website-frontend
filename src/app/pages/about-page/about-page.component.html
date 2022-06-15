@@ -59,7 +59,7 @@
 
     <section class="conatiner mx-auto p-6 bg-white" id="about-us-persona">
         <div class="persona-container justify-center items-start flex-col md:flex-row flex">
-            <app-persona class="flex justify-center" *ngFor="let persona of personaInfo | async" [persona]="persona">
+            <app-persona class="flex justify-center" *ngFor="let persona of personaInfo$ | async" [persona]="persona">
             </app-persona>
         </div>
     </section>
@@ -70,7 +70,7 @@
 
     <section class="conatiner mx-auto p-6 bg-white" id="about-us-persona">
         <div class="persona-container justify-evenly items-center flex-col md:flex-row flex">
-            <app-persona class="flex justify-center" *ngFor="let persona of personaCats | async" [persona]="persona">
+            <app-persona class="flex justify-center" *ngFor="let persona of personaCats$ | async" [persona]="persona">
             </app-persona>
         </div>
     </section>

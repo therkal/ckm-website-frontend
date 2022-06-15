@@ -11,14 +11,14 @@ import { environment } from 'src/environments/environment';
 })
 export class NavBarComponent implements OnInit {
 
-  menuItems: Observable<MenuItem[]> = new Observable();
+  menuItems$: Observable<MenuItem[]> = new Observable();
 
   isMenuOpen: Boolean = false;
 
   constructor(private client: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems = this.client.get<MenuItem[]>(environment.assetsBasePath + 'nav-menu-items.json');
+    this.menuItems$ = this.client.get<MenuItem[]>(environment.assetsBasePath + 'nav-menu-items.json');
   }
 
 }

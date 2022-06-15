@@ -16,10 +16,6 @@ export class GalleryItemComponent {
   @Input() galleryItem!: Gallery | GalleryImage;
   @Input() isGallery = false;
 
-  onLoad() {
-    this.isLoading = false;
-  }
-
   isGalleryImage() {
     if ((this.galleryItem as GalleryImage).author) {
       return true;

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable, switchMap, tap } from 'rxjs';
-import { GalleryImage, GalleryItem } from 'src/app/entities/models';
+import { map, Observable, switchMap } from 'rxjs';
+import { GalleryImage } from 'src/app/entities/models';
 import { TransformService } from 'src/app/services/transform.service';
 import { environment } from 'src/environments/environment';
 
@@ -13,12 +13,15 @@ import { environment } from 'src/environments/environment';
 })
 export class PhotoGalleryComponent implements OnInit {
 
-  photos: Observable<GalleryImage[]> = new Observable();
+  galleryName$: Observable<string | null> = new Observable();
+  photos$: Observable<GalleryImage[]> = new Observable();
 
   constructor(private route: ActivatedRoute, private client: HttpClient, private transformService: TransformService) { }
 
   ngOnInit(): void {
-    this.photos = this.route.paramMap.pipe(
+    this.galleryName$ = this.route.paramMap.pipe(map(params => params.get("id"))); // ToDo: Get actual gallery name.
+
+    this.photos$ = this.route.paramMap.pipe(
       // Get the ID from the param map
       map(params => params.get("id")),
       // Switch to another observable to get the data.

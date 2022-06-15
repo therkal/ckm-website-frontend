@@ -4,7 +4,7 @@
         <span class="gallery-item-info p-2 top-0"
             *ngIf="this.isGallery; else animationHeader">{{galleryItem.title}}</span>
 
-        <img src="{{galleryItem.imageUrl}}" alt="{{galleryItem.title}}" (load)="onLoad()">
+        <img src="{{galleryItem.imageUrl}}" alt="{{galleryItem.title}}" (load)="this.isLoading = false;">
 
         <div class="gallery-item-author-info gallery-item-info gallery-info-animationable bottom-0 p-2"
             *ngIf="isGalleryImage()">

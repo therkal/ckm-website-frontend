@@ -27,7 +27,7 @@ import { PersonaComponent } from './components/persona/persona.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
