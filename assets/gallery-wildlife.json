@@ -1,12 +1,12 @@
 [
     {
         "name": "Squirrel Throne",
-        "image": "../../../photography-website/assets/Wildlife/wildlife-landscape-1.jpg",
+        "image": "../../assets/Wildlife/wildlife-landscape-1.jpg",
         "orientation": "Landscape",
-        "location": { 
-                "name": "Jacques Cartier",
-                "lat": "",
-                "lon": ""
+        "location": {
+            "name": "Jacques Cartier",
+            "lat": "",
+            "lon": ""
         },
         "author": "Kenneth Martens",
         "tags": [
@@ -17,12 +17,12 @@
     },
     {
         "name": "Close-up of a Bison",
-        "image": "../../../photography-website/assets/Wildlife/wildlife-portrait-4.jpg",
+        "image": "../../assets/Wildlife/wildlife-portrait-4.jpg",
         "orientation": "Portrait",
-        "location": { 
-                "name": "Badlands NP",
-                "lat": "",
-                "lon": ""
+        "location": {
+            "name": "Badlands NP",
+            "lat": "",
+            "lon": ""
         },
         "author": "Corrina Martens",
         "tags": [
@@ -31,12 +31,12 @@
     },
     {
         "name": "The Showdown",
-        "image": "../../../photography-website/assets/Wildlife/wildlife-portrait-1.jpg",
+        "image": "../../assets/Wildlife/wildlife-portrait-1.jpg",
         "orientation": "Portrait",
-        "location": { 
-                "name": "Somewhere in Illinois",
-                "lat": "",
-                "lon": ""
+        "location": {
+            "name": "Somewhere in Illinois",
+            "lat": "",
+            "lon": ""
         },
         "author": "Kenneth Martens",
         "tags": [
