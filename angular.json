@@ -110,5 +110,7 @@
       }
     }
   },
-  "defaultProject": "photography-website"
+  "cli": {
+    "analytics": "d228bb2f-e9b5-495e-bd15-ac3b0c3e13fe"
+  }
 }
