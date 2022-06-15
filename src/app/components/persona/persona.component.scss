@@ -25,12 +25,13 @@
         object-fit: cover;
         height: 256px !important;
         width: 256px !important;
+        z-index: 1;
     }
 
     .persona>.image-loading-indicator {
         border-radius: 50%;
         object-fit: cover;
-        height: 128px;
-        width: 128px;
+        height: 256px !important;
+        width: 256px !important;
     }
 }
