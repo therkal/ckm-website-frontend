@@ -20,16 +20,20 @@
             </div>
         </section>
 
-        <div class="basis-2/4 flex justify-center hidden lg:flex">
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" *ngFor="let item of menuItems$ | async"
+        <div class="basis-2/4 flex justify-center hidden lg:flex menu-items">
+            <button class="px-2 uppercase text-sm md:text-base" *ngFor="let item of menuItems$ | async"
                 routerLink="{{item.routerLink}}" (click)="isMenuOpen = false">{{item.name}}</button>
         </div>
-        <div class="basis-1/4 flex justify-end hidden lg:flex" id="socials">
-            <div id="social-links">
-                <a class="p-1" href="https://instagram.com/zahmoose" target="_blank">IG</a>
-                <a class="p-1" href="https://500px.com/p/kennethmartens93" target="_blank">500PX</a>
+        <div class="basis-1/4 flex justify-end hidden lg:flex items-center" id="socials">
+            <div class="social-links">
+                <a class="p-1" href="https://instagram.com/zahmoose" target="_blank">
+                    <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
+                </a>
+                <a class="p-1" href="https://500px.com/p/kennethmartens93" target="_blank">
+                    <fa-icon [icon]="['fab', '500px']"></fa-icon>
+                </a>
             </div>
-
+            <div class="divider"></div>
             <span class="ml-2"> New Work </span>
         </div>
 

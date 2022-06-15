@@ -13,7 +13,7 @@ export class NavBarComponent implements OnInit {
 
   menuItems$: Observable<MenuItem[]> = new Observable();
 
-  isMenuOpen: Boolean = false;
+  isMenuOpen = false;
 
   constructor(private client: HttpClient) { }
 

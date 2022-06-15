@@ -1,9 +1,12 @@
 <div class="gallery-menu-bar flex flex-row bg-teal-500 items-center text-white">
     <div class="basis-1/4 p-6">
-        <a routerLink="/gallery">back</a>
+        <a routerLink="/gallery">
+            <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
+        </a>
     </div>
 
-    <div class="basis-2/4 flex justify-center"> {{galleryName$ | async}}</div>
+    <div class=" basis-2/4 flex justify-center"> {{galleryName$ | async}}
+    </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch m-3 lg:p-0" id="galleryTop">
@@ -13,5 +16,7 @@
 </div>
 
 <div class="back-to-top-wrapper">
-    <button (click)="backToTop()" class="back-to-top-link" aria-label="Scroll to Top">Up</button>
+    <button (click)="backToTop()" class="back-to-top-link" aria-label="Scroll to Top">
+        <fa-icon [icon]="['fas', 'arrow-up']" size="lg"></fa-icon>
+    </button>
 </div>

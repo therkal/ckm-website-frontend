@@ -12,6 +12,10 @@ import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-
 import { FormsModule } from '@angular/forms';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PersonaComponent } from './components/persona/persona.component';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +32,19 @@ import { PersonaComponent } from './components/persona/persona.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      fa500px,
+      faInstagram,
+      faArrowLeft,
+      faArrowUp
+    );
+  }
+}
