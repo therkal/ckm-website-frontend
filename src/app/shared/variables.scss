@@ -38,11 +38,6 @@ $scrollLength: 100vh;
     &:focus {
         transform: scale(1.1);
     }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px scale-color($primary-color, $lightness: 35%);
-    }
 }
 
 /** 
