@@ -1,10 +1,10 @@
 [
     {
-        "name": "Love",
-        "image": "../../../assets/2022Dakota/landscape-1.jpg",
+        "title": "Love",
+        "imageUrl": "/2022Dakota/landscape-1.jpg",
         "orientation": "Landscape",
         "location": {
-            "name": "Theodore Roosevelt National Park - North Unit",
+            "geoLocationName": "Theodore Roosevelt National Park - North Unit",
             "lat": "",
             "lon": ""
         },
@@ -14,11 +14,11 @@
         ]
     },
     {
-        "name": "Spires in the Mist",
-        "image": "../../../assets/2022Dakota/portrait-1.jpg",
+        "title": "Spires in the Mist",
+        "imageUrl": "/2022Dakota/portrait-1.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Custer State Park",
+            "geoLocationName": "Custer State Park",
             "lat": "",
             "lon": ""
         },
@@ -31,11 +31,11 @@
         ]
     },
     {
-        "name": "Prong you on my Horn",
-        "image": "../../../assets/2022Dakota/landscape-3.jpg",
+        "title": "Prong you on my Horn",
+        "imageUrl": "/2022Dakota/landscape-3.jpg",
         "orientation": "Landscape",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -45,11 +45,11 @@
         ]
     },
     {
-        "name": "Bighorn Sheep at Dusk",
-        "image": "../../../assets/2022Dakota/landscape-6.jpg",
+        "title": "Bighorn Sheep at Dusk",
+        "imageUrl": "/2022Dakota/landscape-6.jpg",
         "orientation": "Landscape",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -60,11 +60,11 @@
         ]
     },
     {
-        "name": "u wot m8?!?",
-        "image": "../../../assets/2022Dakota/portrait-2.jpg",
+        "title": "u wot m8?!?",
+        "imageUrl": "/2022Dakota/portrait-2.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -74,11 +74,11 @@
         ]
     },
     {
-        "name": "The Attack",
-        "image": "../../../assets/2022Dakota/landscape-4.jpg",
+        "title": "The Attack",
+        "imageUrl": "/2022Dakota/landscape-4.jpg",
         "orientation": "Landscape",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -88,11 +88,11 @@
         ]
     },
     {
-        "name": "Bighorn Sheep",
-        "image": "../../../assets/2022Dakota/portrait-4.jpg",
+        "title": "Bighorn Sheep",
+        "imageUrl": "/2022Dakota/portrait-4.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -102,11 +102,11 @@
         ]
     },
     {
-        "name": "The Peak",
-        "image": "../../../assets/2022Dakota/portrait-3.jpg",
+        "title": "The Peak",
+        "imageUrl": "/2022Dakota/portrait-3.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },
@@ -116,11 +116,11 @@
         ]
     },
     {
-        "name": "Close-up of a Bison",
-        "image": "../../../assets/2022Dakota/portrait-5.jpg",
+        "title": "Close-up of a Bison",
+        "imageUrl": "/2022Dakota/portrait-5.jpg",
         "orientation": "Portrait",
         "location": {
-            "name": "Badlands NP",
+            "geoLocationName": "Badlands NP",
             "lat": "",
             "lon": ""
         },

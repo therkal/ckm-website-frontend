@@ -2,14 +2,14 @@
 
     <div class="gallery-item-loaded-content" style="height: 100%;" [ngClass]="{'invisible': isLoading}">
         <span class="gallery-item-info p-2 top-0"
-            *ngIf="this.isGallery; else animationHeader">{{galleryItem.name}}</span>
+            *ngIf="this.isGallery; else animationHeader">{{galleryItem.title}}</span>
 
-        <img src="{{galleryItem.image}}" alt="{{galleryItem.name}}" (load)="onLoad()">
+        <img src="{{galleryItem.imageUrl}}" alt="{{galleryItem.title}}" (load)="onLoad()">
 
         <div class="gallery-item-author-info gallery-item-info gallery-info-animationable bottom-0 p-2"
-            *ngIf="galleryItem.author">
-            <img class="persona" src="../../../assets/persona/{{galleryItem.author}}.jpg">
-            <span>{{galleryItem.author}}</span>
+            *ngIf="isGalleryImage()">
+            <img class="persona" src="{{baseUrl}}/persona/{{getAuthor()}}.jpg">
+            <span>{{getAuthor()}}</span>
         </div>
     </div>
 
@@ -17,6 +17,6 @@
 
 <ng-template #animationHeader>
     <div class="gallery-info gallery-info-animationable gallery-item-info p-2 top-0">
-        <span class="basis-full">{{galleryItem.name}}</span>
+        <span class="basis-full">{{galleryItem.title}}</span>
     </div>
 </ng-template>

@@ -8,11 +8,13 @@ import { Persona } from 'src/app/entities/models';
 })
 export class PersonaComponent implements OnInit {
 
+  isLoading: boolean = true;
   @Input() persona?: Persona;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
