@@ -11,11 +11,13 @@ import { Persona } from 'src/app/entities/models';
 export class AboutPageComponent implements OnInit {
 
   personaInfo: Observable<Persona[]> = new Observable();
+  personaCats: Observable<Persona[]> = new Observable();
 
   constructor(private client: HttpClient) { }
 
   ngOnInit(): void {
     this.personaInfo = this.client.get<Persona[]>('/assets/about-persona.json');
+    this.personaCats = this.client.get<Persona[]>('/assets/about-persona-cats.json')
   }
 
 }

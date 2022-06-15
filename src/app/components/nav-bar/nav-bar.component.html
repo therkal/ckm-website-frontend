@@ -13,25 +13,16 @@
                 <span class="block w-7 h-0.5 bg-gray-600 line3"></span>
             </div>
 
-            <!-- ToDo: Load menu from file -->
             <div class="mobile-menu-items">
-                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery"
-                    (click)="isMenuOpen = false">Gallery</button>
-                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/trips"
-                    (click)="isMenuOpen = false">Trips</button>
-                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about"
-                    (click)="isMenuOpen = false">About</button>
-                <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/blog"
-                    (click)="isMenuOpen = false">Blog</button>
+                <button class="px-2 uppercase hover:underline text-sm md:text-base"
+                    *ngFor="let item of menuItems | async" routerLink="{{item.routerLink}}"
+                    (click)="isMenuOpen = false">{{item.name}}</button>
             </div>
         </section>
 
         <div class="basis-2/4 flex justify-center hidden lg:flex">
-            <!-- ToDo: Load menu from file -->
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/gallery">Gallery</button>
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/trips">Trips</button>
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/about">About</button>
-            <button class="px-2 uppercase hover:underline text-sm md:text-base" routerLink="/blog">Blog</button>
+            <button class="px-2 uppercase hover:underline text-sm md:text-base" *ngFor="let item of menuItems | async"
+                routerLink="{{item.routerLink}}" (click)="isMenuOpen = false">{{item.name}}</button>
         </div>
         <div class="basis-1/4 flex justify-end hidden lg:flex" id="socials">
             <div id="social-links">

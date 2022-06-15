@@ -48,7 +48,7 @@ nav .checkbox {
     display: flex;
     flex-direction: column;
     right: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     transform: translateX(1000px);
     transition: transform 0.5s ease-in-out;
@@ -75,7 +75,7 @@ nav .checkbox {
 }
 
 nav input[type="checkbox"]:checked~.mobile-menu-items {
-    transform: translateX(0);
+    transform: translateX(24px);
 }
 
 nav input[type="checkbox"]:checked~.hamburger-lines .line1 {

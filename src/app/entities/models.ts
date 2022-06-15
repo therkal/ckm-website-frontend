@@ -3,3 +3,8 @@ export interface Persona {
     imageUrl: string;
     biography: string;
 }
+
+export interface MenuItem {
+    name: string;
+    routerLink: string;
+}
