@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { Persona } from 'src/app/entities/models';
 
 @Component({
   selector: 'app-about-page',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
-  constructor() { }
+  personaInfo: Observable<Persona[]> = new Observable();
+
+  constructor(private client: HttpClient) { }
 
   ngOnInit(): void {
+    this.personaInfo = this.client.get<Persona[]>('/assets/about-persona.json');
   }
 
 }

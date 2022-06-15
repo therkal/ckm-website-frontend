@@ -1,0 +1,9 @@
+<div class="persona flex-col items-center" *ngIf="persona">
+    <img src="{{persona.imageUrl}}">
+    <h1 class="flex-row text-xl lg:text-3xl border-b-[1px] border-teal-500 p-2 w-1/2 text-center m-2 lg:m-6">
+        {{persona.name}}
+    </h1>
+    <div class="p-4" *ngIf="persona.biography">
+        {{persona.biography}}
+    </div>
+</div>

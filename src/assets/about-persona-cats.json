@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Willow",
+        "imageUrl": "../../../assets/persona/Willow.jpg"
+    },
+    {
+        "name": "Stevie",
+        "imageUrl": "../../../assets/persona/Stevie.jpg"
+    },
+    {
+        "name": "Rou",
+        "imageUrl": "../../../assets/persona/Rou.jpg"
+    }
+]

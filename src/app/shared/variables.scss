@@ -1,1 +1,50 @@
+$primary-color: #45b97e;
 $top-nav-bar-height: 80px;
+
+/** 
+    Parralax Scrolling
+*/
+main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+
+section {
+    transform-style: preserve-3d;
+}
+
+.parallax {
+    /* Set a specific height */
+    min-height: 400px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+}
+
+/**
+    Background layers
+*/
+.image1 {
+    background-image: url("../../assets/2022Dakota/landscape-6.jpg");
+}
+
+.image2 {
+    background-image: url("../../assets/2022Dakota/landscape-3.jpg");
+}

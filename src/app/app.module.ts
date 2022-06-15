@@ -11,6 +11,7 @@ import { GalleryItemComponent } from './components/gallery-item/gallery-item.com
 import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-directive.directive';
 import { FormsModule } from '@angular/forms';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { PersonaComponent } from './components/persona/persona.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     PhotoGalleryComponent,
     GalleryItemComponent,
     LazyLoadImagesDirectiveDirective,
-    AboutPageComponent
+    AboutPageComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,

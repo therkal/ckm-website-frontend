@@ -1,17 +1,5 @@
 @use 'src/app/shared/variables' as global;
 
-
-main {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 2px;
-}
-
-section {
-    transform-style: preserve-3d;
-}
-
 /** Tailwind LG screen */
 @media (min-width: 1024px) {
     .image-overlay-landing-screen {
@@ -20,17 +8,7 @@ section {
 
     .two-col-text>p {
         width: 50%;
-    }
-
-    .persona-container>.persona {
-        width: 50%;
-    }
-
-    .persona-container .persona>img {
-        border-radius: 50%;
-        object-fit: cover;
-        height: 256px !important;
-        width: 256px !important;
+        padding: 0 1.5rem;
     }
 
     section {
@@ -71,47 +49,4 @@ section {
 
 .divider {
     border: 1px solid #45b97e;
-}
-
-.persona-container .persona>img {
-    border-radius: 50%;
-    object-fit: cover;
-    height: 128px;
-    width: 128px;
-}
-
-.persona-container>.persona {
-    justify-content: center;
-    display: flex;
-}
-
-.parallax {
-    /* Set a specific height */
-    min-height: 400px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.image1 {
-    background-image: url("../../../assets/2022Dakota/landscape-6.jpg");
-}
-
-.image2 {
-    background-image: url("../../../assets/2022Dakota/landscape-3.jpg");
-}
-
-.parallax::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateZ(-1px) scale(1.5);
-    background-size: 100%;
-    z-index: -1;
 }

@@ -1,0 +1,22 @@
+.persona>img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 128px;
+    width: 128px;
+}
+
+.persona {
+    justify-content: center;
+    display: flex;
+}
+
+/** Tailwind LG screen */
+@media (min-width: 1024px) {
+
+    .persona>img {
+        border-radius: 50%;
+        object-fit: cover;
+        height: 256px !important;
+        width: 256px !important;
+    }
+}
