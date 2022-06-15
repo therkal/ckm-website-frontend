@@ -4,12 +4,14 @@
     </div>
 
     <div class="basis-2/4 flex justify-center"> {{galleryName$ | async}}</div>
-
-
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch m-3 lg:p-0">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch m-3 lg:p-0" id="galleryTop">
     <app-gallery-item *ngFor="let photo of photos$ | async" [galleryItem]="photo"
         [ngClass]="{'row-span-2': photo.orientation === 'Portrait'}">
     </app-gallery-item>
+</div>
+
+<div class="back-to-top-wrapper">
+    <button (click)="backToTop()" class="back-to-top-link" aria-label="Scroll to Top">Up</button>
 </div>

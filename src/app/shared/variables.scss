@@ -1,6 +1,50 @@
 $primary-color: #45b97e;
 $top-nav-bar-height: 80px;
 
+/**
+    Back to top wrapper
+*/
+
+$scrollLength: 100vh;
+
+.back-to-top-wrapper {
+    position: absolute;
+    top: $scrollLength;
+    right: 1.5rem;
+    bottom: 0;
+    width: 3em;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.back-to-top-link {
+    position: fixed;
+    position: sticky;
+    pointer-events: all;
+    top: calc(100vh - 5rem);
+    display: inline-block;
+    text-decoration: none;
+    line-height: 3rem;
+    text-align: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    padding: 0.25rem;
+    background-color: $primary-color;
+    transition: transform 80ms ease-in;
+    color: white;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px scale-color($primary-color, $lightness: 35%);
+    }
+}
+
 /** 
     Parralax Scrolling
 */

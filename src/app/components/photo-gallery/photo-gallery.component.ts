@@ -30,4 +30,13 @@ export class PhotoGalleryComponent implements OnInit {
       map((collection) => this.transformService.transformImageUrl(collection)));
   }
 
+  // ToDo: extract to generic component.
+  backToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
 }
