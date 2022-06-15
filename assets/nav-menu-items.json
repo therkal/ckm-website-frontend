@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Gallery",
+        "routerLink": "/gallery"
+    },
+    {
+        "name": "About",
+        "routerLink": "/about"
+    },
+    {
+        "name": "Trips",
+        "routerLink": "/tips"
+    },
+    {
+        "name": "Blog",
+        "routerLink": "/blog"
+    }
+]
