@@ -41,7 +41,7 @@ export class SnackbarComponent implements OnInit, OnDestroy {
       delayWhen((x: number) => timer(x)),
       // Toggle visibility
       tap(() => {
-        this.visibleSubject.next(false)
+        // this.visibleSubject.next(false)
       })
     ).subscribe();
   }

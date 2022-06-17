@@ -36,7 +36,7 @@ export class AboutPageComponent implements OnInit {
         duration: SnackbarDuration.SHORT,
         dismissible: true,
         action: {
-          label: "Get me out",
+          label: "Retry",
           callback: this.snackbarCallback
         }
       }
