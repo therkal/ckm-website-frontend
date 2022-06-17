@@ -46,6 +46,5 @@ export interface SnackbarAction {
 export enum SnackbarDuration {
     SHORT,
     INTERMEDIATE,
-    LONG,
-    INDEFINITE
+    LONG
 }

@@ -19,8 +19,7 @@ export class SnackbarComponent implements OnInit, OnDestroy {
   private _durationMap: Map<SnackbarDuration, number> = new Map([
     [SnackbarDuration.SHORT, this._shortSnackbarDurationTimeInMs],
     [SnackbarDuration.INTERMEDIATE, this._intermediateSnackbarDurationTimeInMs],
-    [SnackbarDuration.LONG, this._longSnackbarDurationTimeInMs],
-    [SnackbarDuration.INDEFINITE, -1]
+    [SnackbarDuration.LONG, this._longSnackbarDurationTimeInMs]
   ])
 
   snackbar$: Observable<SnackbarOptions> = new Observable();
@@ -62,7 +61,7 @@ export class SnackbarComponent implements OnInit, OnDestroy {
   /**
    * Private method to determine the duration the snackbar should display in MS
    * @param snackbarOptionsDuration The Snackbar Durations options that was passed. 
-   * @returns (Numner) time in MS
+   * @returns (Number) time in MS
    * @returns if snackbarOptionsDuration undefined --> the default snackbar duration, otherwise a value that is defined in the map
    */
   private getSnackbarDuration(snackbarOptionsDuration: SnackbarDuration | undefined): number {
