@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable, switchMap } from 'rxjs';
+import { catchError, filter, map, Observable, switchMap, tap, throwError } from 'rxjs';
 import { GalleryImage } from 'src/app/entities/models';
+import { GalleryService } from 'src/app/services/gallery.service';
 import { TransformService } from 'src/app/services/transform.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +17,7 @@ export class PhotoGalleryComponent implements OnInit {
   galleryName$: Observable<string | null> = new Observable();
   photos$: Observable<GalleryImage[]> = new Observable();
 
-  constructor(private route: ActivatedRoute, private client: HttpClient, private transformService: TransformService) { }
+  constructor(private route: ActivatedRoute, private client: HttpClient, private service: GalleryService) { }
 
   ngOnInit(): void {
     this.galleryName$ = this.route.paramMap.pipe(map(params => params.get("id"))); // ToDo: Get actual gallery name.
@@ -24,10 +25,13 @@ export class PhotoGalleryComponent implements OnInit {
     this.photos$ = this.route.paramMap.pipe(
       // Get the ID from the param map
       map(params => params.get("id")),
+      // Filter out the value if it is null 
+      filter(id => id !== null),
+      // Cast it to string
+      map(id => id as string),
       // Switch to another observable to get the data.
-      switchMap(id => this.client.get<GalleryImage[]>(environment.assetsBasePath + 'gallery-' + id + ".json")),
-      // TEMP WHILE HOSTING LOCAL --> Change all occurances of imageUrl to append base path
-      map((collection) => this.transformService.transformImageUrl(collection)));
+      switchMap((id: string) => this.service.getGalleryItems(id))
+    );
 
 
   }

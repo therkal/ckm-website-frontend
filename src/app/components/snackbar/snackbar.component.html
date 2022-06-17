@@ -6,7 +6,7 @@
                 <div class="snackbar-actions">
                     <button class="flat-button" *ngIf="snackbar.action"
                         (click)="actionClicked(snackbar.action.callback)">{{snackbar.action.label}}</button>
-                    <button class="flat-button" *ngIf="snackbar.dismissible">Close</button>
+                    <button class="flat-button" (click)="dismissClicked()" *ngIf="snackbar.dismissible">Close</button>
                 </div>
             </div>
         </div>
