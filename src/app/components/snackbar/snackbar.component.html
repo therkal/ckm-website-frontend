@@ -1,0 +1,14 @@
+<div class="snackbar-overlay" *ngIf="snackbar$ | async; let snackbar">
+    <div class="snackbar-overlay-wrapper justify-center items-end">
+        <div class="snackbar-wrapper flex absolute bottom-0">
+            <div class="snackbar justify-between" *ngIf="visibleSubject | async">
+                <span class="snackbar-message"> {{snackbar.message}} </span>
+                <div class="snackbar-actions">
+                    <button class="flat-button" *ngIf="snackbar.action"
+                        (click)="actionClicked(snackbar.action.callback)">{{snackbar.action.label}}</button>
+                    <button class="flat-button" *ngIf="snackbar.dismissible">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

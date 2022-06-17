@@ -15,6 +15,7 @@ import { PersonaComponent } from './components/persona/persona.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
     GalleryItemComponent,
     LazyLoadImagesDirectiveDirective,
     AboutPageComponent,
-    PersonaComponent
+    PersonaComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,

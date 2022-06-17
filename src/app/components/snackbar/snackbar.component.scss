@@ -1,0 +1,50 @@
+@use 'src/app/shared/variables' as global;
+
+.snackbar-overlay,
+.snackbar-overlay-wrapper {
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.snackbar-overlay {
+    position: fixed;
+    z-index: 1000;
+}
+
+.snackbar-overlay-wrapper {
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+}
+
+.snackbar {
+    pointer-events: all;
+    display: flex;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    max-width: 50vw;
+    min-width: 25vw;
+    color: global.$text-color-white;
+    background: global.$snackbar-background-color;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+.snackbar .snackbar-message {
+    margin-right: 8px;
+}
+
+.snackbar .snackbar-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.snackbar .snackbar-actions>.flat-button {
+    color: global.$primary-color;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+}

@@ -30,3 +30,22 @@ export interface ImageGeoLocation {
     lat: string;
     lon: string;
 }
+
+export interface SnackbarOptions {
+    dismissible?: boolean;
+    message: string;
+    duration?: SnackbarDuration;
+    action?: SnackbarAction;
+}
+
+export interface SnackbarAction {
+    label: string;
+    callback: () => void;
+}
+
+export enum SnackbarDuration {
+    SHORT,
+    INTERMEDIATE,
+    LONG,
+    INDEFINITE
+}

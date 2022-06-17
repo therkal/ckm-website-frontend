@@ -28,6 +28,8 @@ export class PhotoGalleryComponent implements OnInit {
       switchMap(id => this.client.get<GalleryImage[]>(environment.assetsBasePath + 'gallery-' + id + ".json")),
       // TEMP WHILE HOSTING LOCAL --> Change all occurances of imageUrl to append base path
       map((collection) => this.transformService.transformImageUrl(collection)));
+
+
   }
 
   // ToDo: extract to generic component.

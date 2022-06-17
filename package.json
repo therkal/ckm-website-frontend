@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:ghpages": "ng build --prod --base-href='https://therkal.github.io/photography-website/' && npx angular-cli-ghpages --dir=dist/photography-website"
+    "deploy:ghpages": "ng build --base-href='https://therkal.github.io/photography-website/' && npx angular-cli-ghpages --dir=dist/photography-website"
   },
   "private": true,
   "dependencies": {
