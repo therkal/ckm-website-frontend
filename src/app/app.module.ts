@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { GalleriesPageComponent } from './pages/galleries-page/galleries-page.component';
 import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 import { LazyLoadImagesDirectiveDirective } from './directives/lazy-load-images-directive.directive';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +16,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     FormsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -21,13 +21,9 @@ export class GalleryService {
 
   getGalleryItems(id: string) {
     return this.client.get<GalleryImage[]>(environment.assetsBasePath + 'gallery-' + id + ".json").pipe(
+      // ToDo: Remove map
       // TEMP WHILE HOSTING LOCAL --> Change all occurances of imageUrl to append base path
-      map((collection) => this.transformService.transformImageUrl(collection)),
-      catchError((error) => of(error)),
-      tap((error) => this.snackbarService.showToast({
-        message: error.message,
-        dismissible: true
-      }))
+      map((collection) => this.transformService.transformImageUrl(collection))
     );
   }
 }
