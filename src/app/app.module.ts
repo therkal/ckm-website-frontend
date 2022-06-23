@@ -18,7 +18,7 @@ import { faArrowLeft, faArrowUp, faHeart, faShareNodes } from '@fortawesome/free
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
-import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
     PersonaComponent,
     SnackbarComponent,
     BlogPageComponent,
-    BlogCardComponent
+    CardComponent
   ],
   imports: [
     BrowserModule,

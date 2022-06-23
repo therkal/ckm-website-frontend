@@ -49,16 +49,25 @@ export enum SnackbarDuration {
     LONG
 }
 
-/**
- * Blog
- */
-export interface BlogPostCard {
+export type CardTypes = 'blog';
+export interface Card {
+    id: string;
     header: string;
     subHeader: string;
     imageUrl: string;
     summaryText: string;
+    type: CardTypes;
+    navigable: true | false;
+}
+
+/**
+ * Blog
+ */
+export interface BlogPostCard extends Card {
+    type: 'blog'; // ToDo: find out why this value is undefined without mapping in service
     galleryLink: string;
 }
+
 
 export interface BlogPost {
     header: string;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { BlogPostCard } from 'src/app/entities/models';
 import { BlogService } from 'src/app/services/blog.service';
 

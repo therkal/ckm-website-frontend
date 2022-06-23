@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="post.navigable ? ['/' + post.type + '/' + post.id] : []">
     <div class="card-image-wrapper">
         <img src="{{post.imageUrl}}" alt="{{post.header}}" />
     </div>
@@ -14,9 +14,7 @@
         <div class="card-actions">
             <div class="actions">
                 <button class="flat-button">Action 1</button>
-                <button class="flat-button">Action 2</button>
             </div>
-
 
             <div class="icons">
                 <button class="icon-button">
