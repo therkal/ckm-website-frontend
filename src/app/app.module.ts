@@ -14,10 +14,11 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PersonaComponent } from './components/persona/persona.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowUp, faHeart, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
     AboutPageComponent,
     PersonaComponent,
     SnackbarComponent,
-    BlogPageComponent
+    BlogPageComponent,
+    BlogCardComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,9 @@ export class AppModule {
       fa500px,
       faInstagram,
       faArrowLeft,
-      faArrowUp
+      faArrowUp,
+      faShareNodes,
+      faHeart
     );
   }
 }

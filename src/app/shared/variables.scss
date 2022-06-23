@@ -4,6 +4,17 @@ $top-nav-bar-height: 80px;
 $text-color-white: #ffffffb3;
 $snackbar-background-color: #323232;
 
+$text-dark-high: rgba(0, 0, 0, 0.87);
+$text-dark-medium: rgba(0, 0, 0, 0.60);
+
+.flat-button {
+    color: $primary-color;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
 fa-icon {
 
     &:hover {

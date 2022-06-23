@@ -15,7 +15,7 @@ export interface Gallery extends GalleryItem {
 
 export interface GalleryImage extends GalleryItem {
     orientation: string;
-    location: ImageGeoLocation
+    location: GeoLocation
     author: string;
 }
 
@@ -25,7 +25,7 @@ export interface GalleryItem {
     tags: [string];
 }
 
-export interface ImageGeoLocation {
+export interface GeoLocation {
     geoLocationName: string;
     lat: string;
     lon: string;
@@ -47,4 +47,25 @@ export enum SnackbarDuration {
     SHORT,
     INTERMEDIATE,
     LONG
+}
+
+/**
+ * Blog
+ */
+export interface BlogPostCard {
+    header: string;
+    subHeader: string;
+    imageUrl: string;
+    summaryText: string;
+    galleryLink: string;
+}
+
+export interface BlogPost {
+    header: string;
+    subHeader: string;
+    imageUrl: string;
+    text: string;
+    datePosted: Date;
+    // Holds locations of trip to display on Map
+    geoData: [GeoLocation]
 }

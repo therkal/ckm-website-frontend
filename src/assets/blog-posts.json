@@ -1,18 +1,26 @@
 [
     {
+        "header": "We are going to Yellowstone and Grand Teton!",
+        "subHeader": "September 2022",
+        "imageUrl": "/2022Dakota/landscape-6.jpg",
+        "summaryText": "We are so excited! We have been wanting to go to these NPs for a long time!"
+    },
+    {
         "header": "Trip to North and South Dakota",
         "subHeader": "May - June 2022",
         "imageUrl": "/2022Dakota/landscape-6.jpg",
-        "summaryText": "Read all about our trip to North and South Dakota. This article will feature locations we have been and tips to find wildlife",
-        "datePosted": "",
-        "text": "",
-        "galleryLink": "",
-        "geoData": [
-            {
-                "geoLocationName": "",
-                "lat": "",
-                "lon": ""
-            }
-        ]
+        "summaryText": "Read all about our trip to North and South Dakota. This article will feature locations we have been and tips to find wildlife"
+    },
+    {
+        "header": "National Parks of Arizona",
+        "subHeader": "December 2021",
+        "imageUrl": "/2022Dakota/landscape-6.jpg",
+        "summaryText": "Read all about our trip to Arizona! We will talk about the experiences we had."
+    },
+    {
+        "header": "The Netherlands, Belgium, and France",
+        "subHeader": "October 2021",
+        "imageUrl": "/2022Dakota/landscape-6.jpg",
+        "summaryText": "Read all about our recent road-trip to Brittany, France"
     }
 ]

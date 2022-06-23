@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-image-wrapper">
+        <img src="{{post.imageUrl}}" alt="{{post.header}}" />
+    </div>
+    <div class="card-header-section card-text-section">
+        <span class="card-header">{{post.header}}</span>
+        <span class="card-sub-header">{{post.subHeader}}</span>
+    </div>
+    <div class="card-content card-text-section">
+        <div class="card-summary-text">
+            {{post.summaryText}}
+        </div>
+
+        <div class="card-actions">
+            <div class="actions">
+                <button class="flat-button">Action 1</button>
+                <button class="flat-button">Action 2</button>
+            </div>
+
+
+            <div class="icons">
+                <button class="icon-button">
+                    <fa-icon [icon]="['fas', 'heart']" size="lg"></fa-icon>
+                </button>
+                <button class="icon-button">
+                    <fa-icon [icon]="['fas', 'share-nodes']" size="lg"></fa-icon>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

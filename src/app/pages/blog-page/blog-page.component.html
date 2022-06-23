@@ -1,1 +1,11 @@
-<p>blog-page works!</p>
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch m-3 lg:p-0">
+        <app-blog-card *ngFor="let post of blogPosts$ | async" [post]="post"></app-blog-card>
+    </div>
+
+    <div class="back-to-top-wrapper">
+        <button (click)="backToTop()" class="back-to-top-link" aria-label="Scroll to Top">
+            <fa-icon [icon]="['fas', 'arrow-up']" size="lg"></fa-icon>
+        </button>
+    </div>
+</div>
