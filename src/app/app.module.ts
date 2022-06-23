@@ -17,6 +17,7 @@ import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
     LazyLoadImagesDirectiveDirective,
     AboutPageComponent,
     PersonaComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,

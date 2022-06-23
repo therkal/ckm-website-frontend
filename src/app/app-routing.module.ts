@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { GalleriesPageComponent } from './pages/galleries-page/galleries-page.component';
 
 const routes: Routes = [
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     'path': 'about', 'component': AboutPageComponent
+  },
+  {
+    'path': 'blog', 'component': BlogPageComponent
   }
 ];
 
