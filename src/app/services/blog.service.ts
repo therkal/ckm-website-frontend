@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BlogPost, BlogPostCard } from '../entities/models';
 import { TransformService } from './transform.service';
@@ -10,8 +10,21 @@ import { TransformService } from './transform.service';
 })
 export class BlogService {
 
+  private selectedBlogPostSubject: Subject<BlogPostCard> = new ReplaySubject();
+
   constructor(private client: HttpClient, private transformService: TransformService) { }
 
+  getSelectedBlogPost(): Observable<BlogPostCard> {
+    return this.selectedBlogPostSubject.asObservable();
+  }
+
+  selectBlogPost(post: BlogPostCard) {
+    this.selectedBlogPostSubject.next(post);
+  }
+
+  /** 
+   * Crud 
+   */
   get(): Observable<BlogPostCard[]> {
     return this.client.get<BlogPostCard[]>(`${environment.assetsBasePath}blog-posts.json`).pipe(
       // ToDo: Find out why type doesn't work.

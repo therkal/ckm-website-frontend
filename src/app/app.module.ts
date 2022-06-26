@@ -19,6 +19,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { CardComponent } from './components/card/card.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CardComponent } from './components/card/card.component';
     PersonaComponent,
     SnackbarComponent,
     BlogPageComponent,
-    CardComponent
+    CardComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,

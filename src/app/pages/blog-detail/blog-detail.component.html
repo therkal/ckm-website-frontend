@@ -1,0 +1,8 @@
+<div *ngIf="(active$ | async) as post; else loading">
+    {{post.id}}
+    TADA
+</div>
+
+<ng-template #loading>
+    loading
+</ng-template>
