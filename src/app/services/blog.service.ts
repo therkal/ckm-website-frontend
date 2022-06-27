@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BlogPost, BlogPostCard } from '../entities/models';
 import { TransformService } from './transform.service';
@@ -10,11 +10,11 @@ import { TransformService } from './transform.service';
 })
 export class BlogService {
 
-  private selectedBlogPostSubject: Subject<BlogPostCard> = new ReplaySubject();
+  private selectedBlogPostSubject: Subject<BlogPostCard | undefined> = new BehaviorSubject<BlogPostCard | undefined>(undefined);
 
   constructor(private client: HttpClient, private transformService: TransformService) { }
 
-  getSelectedBlogPost(): Observable<BlogPostCard> {
+  getSelectedBlogPost(): Observable<BlogPostCard | undefined> {
     return this.selectedBlogPostSubject.asObservable();
   }
 
@@ -40,7 +40,7 @@ export class BlogService {
     );
   }
 
-  getById(id: string) {
-    return this.client.get<BlogPost>(`${environment.assetsBasePath}blog-${id}.json`);
+  getById(id: string): Observable<BlogPost> {
+    return this.client.get<BlogPost>(`${environment.assetsBasePath}blog/${id}.json`);
   }
 }

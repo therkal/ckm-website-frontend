@@ -1,0 +1,36 @@
+@use 'src/app/shared/variables' as global;
+
+.top-image-wrapper>img {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+    z-index: 0;
+}
+
+.top-image-wrapper::after {
+    content: ""; // ::before and ::after both require content
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    opacity: .7;
+
+    // Exclude the top bar.
+    top: calc(global.$top-nav-bar-height / 2);
+    height: calc(100% - global.$top-nav-bar-height / 2);
+}
+
+.top-image-wrapper .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.top-image-wrapper>* {
+    z-index: 1;
+}

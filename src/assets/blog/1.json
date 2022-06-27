@@ -1,0 +1,30 @@
+{
+    "body": "I am a nice and long body text.",
+    "geoData": [
+        {
+            "geoLocationName": "Theodore Roosevelt National Park - North Unit",
+            "lat": "",
+            "lon": ""
+        },
+        {
+            "geoLocationName": "Badlands National Park",
+            "lat": "",
+            "lon": ""
+        },
+        {
+            "geoLocationName": "Windcave National Park",
+            "lat": "",
+            "lon": ""
+        },
+        {
+            "geoLocationName": "Custer State Park",
+            "lat": "",
+            "lon": ""
+        },
+        {
+            "geoLocationName": "Mount Rushmore",
+            "lat": "",
+            "lon": ""
+        }
+    ]
+}

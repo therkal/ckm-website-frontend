@@ -68,12 +68,13 @@ export interface BlogPostCard extends Card {
     galleryLink: string;
 }
 
-
 export interface BlogPost {
+    id: string;
     header: string;
     subHeader: string;
     imageUrl: string;
-    text: string;
+    summaryText: string;
+    body: string;
     datePosted: Date;
     // Holds locations of trip to display on Map
     geoData: [GeoLocation]

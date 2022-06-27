@@ -1,6 +1,13 @@
 <div *ngIf="(active$ | async) as post; else loading">
-    {{post.id}}
-    TADA
+    <app-detail-page-nav-bar></app-detail-page-nav-bar>
+    <div class="top-image-wrapper">
+        <img class="image" src="{{post.imageUrl}}" alt="{{post.header}}" aria-label="Image supporting post" />
+
+        <div class="text-container p-4 lg:p-2">
+            <h1 class="text-3xl">{{post.header}}</h1>
+            <h2 class="text-xl">{{post.subHeader}}</h2>
+        </div>
+    </div>
 </div>
 
 <ng-template #loading>

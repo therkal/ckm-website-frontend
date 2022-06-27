@@ -20,6 +20,7 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { CardComponent } from './components/card/card.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/detail-page-nav-bar.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
     SnackbarComponent,
     BlogPageComponent,
     CardComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    DetailPageNavBarComponent
   ],
   imports: [
     BrowserModule,

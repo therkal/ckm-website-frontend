@@ -1,0 +1,10 @@
+<div class="detail-page-menu-bar flex flex-row bg-teal-500 items-center text-white">
+    <div class="basis-1/4 p-6">
+        <a routerLink="../">
+            <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
+        </a>
+    </div>
+
+    <div class=" basis-2/4 flex justify-center" *ngIf="title$ | async"> {{title$ | async}}</div>
+    <div class=" basis-2/4 flex justify-center" *ngIf="title"> {{title}} </div>
+</div>
