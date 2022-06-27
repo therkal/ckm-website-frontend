@@ -5,6 +5,6 @@
         </a>
     </div>
 
-    <div class=" basis-2/4 flex justify-center" *ngIf="title$ | async"> {{title$ | async}}</div>
-    <div class=" basis-2/4 flex justify-center" *ngIf="title"> {{title}} </div>
+    <div class=" basis-2/4 flex justify-center title" *ngIf="title$ | async"> <span> {{title$ | async}} </span></div>
+    <div class=" basis-2/4 flex justify-center title" *ngIf="title"> <span> {{title}} </span></div>
 </div>

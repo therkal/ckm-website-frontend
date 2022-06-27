@@ -74,6 +74,7 @@ export interface BlogPost {
     subHeader: string;
     imageUrl: string;
     summaryText: string;
+    introduction: string;
     body: string;
     datePosted: Date;
     // Holds locations of trip to display on Map

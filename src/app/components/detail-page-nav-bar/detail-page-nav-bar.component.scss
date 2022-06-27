@@ -2,4 +2,11 @@
 
 .detail-page-menu-bar {
     height: calc(global.$top-nav-bar-height / 2);
+
+    .title,
+    .title span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }

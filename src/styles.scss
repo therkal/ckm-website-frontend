@@ -1,3 +1,32 @@
+@use 'src/app/shared/variables' as global;
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/** Blog markup */
+.blog-content {
+    h1 {
+        font-size: 1.4em;
+        color: global.$primary-color;
+        // border-bottom: 1px solid global.$primary-color;
+        padding: 2px 0px;
+
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        padding: 4px 0;
+    }
+
+    hr {
+        border-color: global.$primary-color;
+        margin: 16px 0;
+    }
+}
