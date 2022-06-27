@@ -1,5 +1,5 @@
+<app-detail-page-nav-bar [title]="(active$ |async)?.header"></app-detail-page-nav-bar>
 <div *ngIf="(active$ | async) as post; else loading">
-    <app-detail-page-nav-bar></app-detail-page-nav-bar>
     <div class="top-image-wrapper">
         <img class="image" src="{{post.imageUrl}}" alt="{{post.header}}" aria-label="Image supporting post" />
 

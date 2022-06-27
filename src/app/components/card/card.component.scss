@@ -1,6 +1,12 @@
 @use 'src/app/shared/variables' as global;
 $card-border-radius: 4px;
+$card-image-height: 215px;
 
+.card-image-wrapper,
+.card-image-wrapper>img {
+    height: $card-image-height;
+    width: 100%;
+}
 
 .card {
     border-radius: $card-border-radius;

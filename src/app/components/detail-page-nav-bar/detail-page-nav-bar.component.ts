@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class DetailPageNavBarComponent implements OnInit {
 
   @Input() title$: Observable<string | null> = new Observable();
-  @Input() title: string = '';
+  @Input() title: string | undefined = '';
 
   constructor() { }
 
