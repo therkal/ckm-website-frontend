@@ -1,5 +1,9 @@
 @use 'src/app/shared/variables' as global;
 
+.top-image-wrapper {
+    position: relative;
+}
+
 .top-image-wrapper>img {
     object-fit: cover;
     height: 350px;
@@ -12,12 +16,10 @@
     position: absolute;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    background-image: linear-gradient(120deg, #eaee44, #45b97e, #33d0ff);
     opacity: .7;
-
-    // Exclude the top bar.
-    top: calc(global.$top-nav-bar-height / 2);
-    height: calc(100% - global.$top-nav-bar-height / 2);
+    top: 0;
+    height: 100%;
 }
 
 .top-image-wrapper .text-container {
@@ -27,10 +29,8 @@
     justify-content: center;
     width: 100%;
     position: absolute;
-
-    // Exclude the top bar.
-    top: calc(global.$top-nav-bar-height / 2);
-    height: calc(100% - global.$top-nav-bar-height / 2);
+    top: 0;
+    height: 100%;
 }
 
 .top-image-wrapper>* {

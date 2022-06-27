@@ -21,6 +21,7 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { CardComponent } from './components/card/card.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/detail-page-nav-bar.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/deta
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }

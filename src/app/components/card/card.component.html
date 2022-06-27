@@ -1,5 +1,5 @@
 <div class="card" (click)="cardClicked(post)" [routerLink]="post.navigable ? ['/' + post.type + '/' + post.id] : []">
-    <div class="card-image-wrapper bg-slate-200" [ngClass]="{'animate-pulse': isLoading}">
+    <div class="card-image-wrapper bg-slate-200" [ngClass]="{'animate-pulse': isImageLoading}">
         <img src="{{post.imageUrl}}" alt="{{post.header}}" (load)="onImageLoad()" />
     </div>
     <div class="card-header-section card-text-section">

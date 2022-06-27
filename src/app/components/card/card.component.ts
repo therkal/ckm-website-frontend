@@ -8,7 +8,7 @@ import { Card } from 'src/app/entities/models';
 })
 export class CardComponent {
 
-  isLoading = true;
+  isImageLoading = true;
 
   @Input() post!: Card;
   @Output() selectedPostEvent: EventEmitter<Card> = new EventEmitter();
@@ -18,7 +18,7 @@ export class CardComponent {
   }
 
   onImageLoad() {
-    this.isLoading = false;
+    this.isImageLoading = false;
   }
 
 }
