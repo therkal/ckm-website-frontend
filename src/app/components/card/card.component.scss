@@ -6,6 +6,7 @@ $card-image-height: 215px;
 .card-image-wrapper>img {
     height: $card-image-height;
     width: 100%;
+    object-fit: cover;
 }
 
 .card {
