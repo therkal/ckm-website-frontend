@@ -9,7 +9,7 @@ import { GeoLocation } from 'src/app/entities/models';
 })
 export class LeafletMapComponent implements AfterViewInit {
 
-  readonly _DEF_MAP_ZOOM_LEVEL: number = 8;
+  readonly _DEF_MAP_ZOOM_LEVEL: number = 7;
 
   @Input() geoLocations!: [GeoLocation];
 
