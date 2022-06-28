@@ -28,5 +28,14 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "component-selector": [
+    true,
+    [
+      "element",
+      "attribute"
+    ],
+    "app",
+    "kebab-case"
+  ]
 }

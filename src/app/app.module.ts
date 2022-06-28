@@ -22,6 +22,7 @@ import { CardComponent } from './components/card/card.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/detail-page-nav-bar.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { LeafletMapComponent } from './components/leaflet-map/leaflet-map.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MarkdownModule } from 'ngx-markdown';
     BlogPageComponent,
     CardComponent,
     BlogDetailComponent,
-    DetailPageNavBarComponent
+    DetailPageNavBarComponent,
+    LeafletMapComponent
   ],
   imports: [
     BrowserModule,

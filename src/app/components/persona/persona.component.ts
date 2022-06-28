@@ -6,15 +6,11 @@ import { Persona } from 'src/app/entities/models';
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.scss']
 })
-export class PersonaComponent implements OnInit {
+export class PersonaComponent {
 
   isLoading: boolean = true;
   @Input() persona?: Persona;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 
 }

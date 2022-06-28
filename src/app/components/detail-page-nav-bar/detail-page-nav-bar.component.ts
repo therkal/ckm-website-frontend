@@ -6,14 +6,11 @@ import { Observable } from 'rxjs';
   templateUrl: './detail-page-nav-bar.component.html',
   styleUrls: ['./detail-page-nav-bar.component.scss']
 })
-export class DetailPageNavBarComponent implements OnInit {
+export class DetailPageNavBarComponent {
 
   @Input() title$: Observable<string | null> = new Observable();
   @Input() title: string | undefined = '';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
