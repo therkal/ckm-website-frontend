@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
   assetsBasePath: '/assets/',
-  mapbox: {
-    accessToken: 'pk.eyJ1IjoiYnJhc2thbSIsImEiOiJja3NqcXBzbWoyZ3ZvMm5ybzA4N2dzaDR6In0.RUAYJFnNgOnn80wXkrV9ZA',
-  },
+  map: {
+    mapImplementationUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }
 };
 
 /*

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { GeoLocation } from 'src/app/entities/models';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -26,8 +27,8 @@ export class LeafletMapComponent implements AfterViewInit {
 
     this.initializeGeoDataMarkers();
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    L.tileLayer(environment.map.mapImplementationUrl, {
+      attribution: environment.map.attribution,
     }).addTo(this.map);
   }
 

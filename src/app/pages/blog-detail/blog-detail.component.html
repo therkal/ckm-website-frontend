@@ -13,8 +13,12 @@
         <markdown class="introduction">
             {{post.introduction}}
         </markdown>
-        <hr />
-        <app-leaflet-map [geoLocations]="post.geoData"></app-leaflet-map>
+
+        <section class="geoData" *ngIf="post.geoData && post.geoData.length > 0">
+            <hr />
+            <app-leaflet-map [geoLocations]="post.geoData"></app-leaflet-map>
+        </section>
+
         <hr />
         <markdown class="body">
             {{post.body}}
