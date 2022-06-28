@@ -14,16 +14,21 @@
         },
         {
             "geoLocationName": "Custer State Park",
+            "lat": "43.7643650",
+            "lon": "-103.5233085"
+        },
+        {
+            "geoLocationName": "Mount Rushmore",
+            "lat": "43.8787301",
+            "lon": "-103.4591930"
+        },
+        {
+            "geoLocationName": "Theodore Roosevelt National Park - South Unit",
             "lat": "",
             "lon": ""
         },
         {
             "geoLocationName": "Theodore Roosevelt National Park - North Unit",
-            "lat": "",
-            "lon": ""
-        },
-        {
-            "geoLocationName": "Mount Rushmore",
             "lat": "",
             "lon": ""
         }

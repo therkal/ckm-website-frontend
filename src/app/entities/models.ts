@@ -27,8 +27,8 @@ export interface GalleryItem {
 
 export interface GeoLocation {
     geoLocationName: string;
-    lat: string;
-    lon: string;
+    lat: number;
+    lon: number;
 }
 
 export interface SnackbarOptions {

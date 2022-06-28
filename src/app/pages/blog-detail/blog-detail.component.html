@@ -14,7 +14,7 @@
             {{post.introduction}}
         </markdown>
         <hr />
-        <app-leaflet-map></app-leaflet-map>
+        <app-leaflet-map [geoLocations]="post.geoData"></app-leaflet-map>
         <hr />
         <markdown class="body">
             {{post.body}}

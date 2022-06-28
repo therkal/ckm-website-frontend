@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { GeoLocation } from 'src/app/entities/models';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -7,6 +8,10 @@ import * as L from 'leaflet';
   styleUrls: ['./leaflet-map.component.scss']
 })
 export class LeafletMapComponent implements AfterViewInit {
+
+  readonly _DEF_MAP_ZOOM_LEVEL: number = 8;
+
+  @Input() geoLocations!: [GeoLocation];
 
   map!: L.Map;
 
@@ -19,14 +24,29 @@ export class LeafletMapComponent implements AfterViewInit {
   private loadMap(): void {
     this.initializeIcons();
 
-    this.map = L.map('map').setView([51.505, -0.09], 13);
+    this.initializeGeoDataMarkers();
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
+  }
 
-    L.marker([51.5, -0.09]).addTo(this.map)
-      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-      .openPopup();
+  private initializeGeoDataMarkers() {
+    // Get initial location to set map to.
+    const firstGeoLocation = this.geoLocations ? this.geoLocations[0] : { lat: 0, lon: 0 };
+    this.map = L.map('map').setView([firstGeoLocation.lat, firstGeoLocation.lon], this._DEF_MAP_ZOOM_LEVEL);
+
+    for (let location of this.geoLocations) {
+      if (location.lat & location.lon) {
+        L.marker([location.lat, location.lon])
+          .bindTooltip(location.geoLocationName)
+          .openTooltip()
+          .addTo(this.map);
+      } else {
+        console.warn(`Location ${location.geoLocationName} has no lattitude and/or longtitude and will be skipped from rendering.`);
+      }
+
+    }
   }
 
   private initializeIcons() {
