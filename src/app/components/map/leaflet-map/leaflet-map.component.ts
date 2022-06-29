@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ApplicationRef, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, Injector, Input, OnInit, Output, Type, ViewContainerRef } from '@angular/core';
 import * as L from 'leaflet';
 import { GeoLocation } from 'src/app/entities/models';
 import { environment } from 'src/environments/environment';
+import { LeafletMarkerPopupComponent } from '../leaflet-marker-popup/leaflet-marker-popup.component';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -16,13 +17,19 @@ export class LeafletMapComponent implements AfterViewInit {
 
   map!: L.Map;
 
-  constructor() { }
+  constructor(
+    private viewContainerRef: ViewContainerRef,
+    private appRef: ApplicationRef
+  ) { }
 
   ngAfterViewInit(): void {
     this.loadMap();
   }
 
   private loadMap(): void {
+    // Generate map
+    this.map = L.map('map');
+
     this.initializeIcons();
 
     this.initializeGeoDataMarkers();
@@ -33,19 +40,17 @@ export class LeafletMapComponent implements AfterViewInit {
   }
 
   private initializeGeoDataMarkers() {
-    // Get initial location to set map to.
-    const firstGeoLocation = this.geoLocations ? this.geoLocations[0] : { lat: 0, lon: 0 };
-    this.map = L.map('map');
-
     // Create a feature group
     const group = L.featureGroup();
     // Add all GeoData locations on map.
     for (let location of this.geoLocations) {
+      let markerPopup: any = this.compilePopup(LeafletMarkerPopupComponent, location);
+
       if (location.lat & location.lon) {
         group.addLayer(
           L.marker([location.lat, location.lon])
             .bindTooltip(location.geoLocationName)
-            .addEventListener('click', this.tooltipClicked)
+            .bindPopup(markerPopup, { closeButton: false })
         )
       } else {
         console.warn(`Location ${location.geoLocationName} has no lattitude and/or longtitude and will be skipped from rendering.`);
@@ -57,9 +62,21 @@ export class LeafletMapComponent implements AfterViewInit {
     group.addTo(this.map);
   }
 
-  tooltipClicked(e: L.LeafletEvent) {
-    console.log("Clicked!", e)
-    throw new Error("Not implemented");
+  /**
+   * Builds the referenced component so it can be injected into the 
+   * leaflet map as popup.
+   */
+  private compilePopup(component: Type<LeafletMarkerPopupComponent>, location: GeoLocation): any {
+    const compRef: ComponentRef<LeafletMarkerPopupComponent> = this.viewContainerRef.createComponent(component);
+    compRef.instance.geoLocation = location;
+
+    compRef.changeDetectorRef.detectChanges();
+
+    compRef.onDestroy(() => this.appRef.detachView(compRef.hostView));
+
+    let div = document.createElement('div');
+    div.appendChild(compRef.location.nativeElement);
+    return div;
   }
 
   private initializeIcons() {

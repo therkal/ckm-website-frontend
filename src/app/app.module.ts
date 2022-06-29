@@ -22,7 +22,8 @@ import { CardComponent } from './components/card/card.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/detail-page-nav-bar.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { LeafletMapComponent } from './components/leaflet-map/leaflet-map.component';
+import { LeafletMapComponent } from './components/map/leaflet-map/leaflet-map.component';
+import { LeafletMarkerPopupComponent } from './components/map/leaflet-marker-popup/leaflet-marker-popup.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LeafletMapComponent } from './components/leaflet-map/leaflet-map.compon
     CardComponent,
     BlogDetailComponent,
     DetailPageNavBarComponent,
-    LeafletMapComponent
+    LeafletMapComponent,
+    LeafletMarkerPopupComponent
   ],
   imports: [
     BrowserModule,
