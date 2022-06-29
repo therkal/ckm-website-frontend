@@ -1,13 +1,15 @@
 <div class="background-wrapper flex justify-center">
     <section class="items-center basis-1/12">
-        <fa-icon [icon]="['fas', 'chevron-left']" size="lg"></fa-icon>
+        <fa-icon [icon]="['fas', 'chevron-left']" size="lg" (click)="previousImage()" *ngIf="activeImageIndex > 0">
+        </fa-icon>
     </section>
 
     <section class="image-wrapper basis-10/12 ">
-        <img src="../../../assets/2022Dakota/landscape-1.jpg" />
+        <img *ngIf="activeImage$ | async; let image" src="{{image.imageUrl}}" alt="{{image.title}}"
+            aria-label="image" />
     </section>
 
     <section class="items-center basis-1/12">
-        <fa-icon [icon]="['fas', 'chevron-right']" size="lg"></fa-icon>
+        <fa-icon [icon]="['fas', 'chevron-right']" size="lg" (click)="nextImage()" *ngIf="hasNextImage"></fa-icon>
     </section>
 </div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Gallery, GalleryImage } from '../entities/models';
 import { TransformService } from './transform.service';
@@ -18,7 +18,7 @@ export class GalleryService {
     );
   }
 
-  getGalleryItems(id: string) {
+  getGalleryItems(id: string): Observable<GalleryImage[]> {
     return this.client.get<GalleryImage[]>(environment.assetsBasePath + 'gallery-' + id + ".json").pipe(
       // ToDo: Remove map
       // TEMP WHILE HOSTING LOCAL --> Change all occurances of imageUrl to append base path

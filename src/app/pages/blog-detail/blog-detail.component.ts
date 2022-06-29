@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, filter, map, Observable, of, switchMap, tap } from 'rxjs';
-import { BlogPost, BlogPostCard } from 'src/app/entities/models';
+import { combineLatest, filter, map, Observable, of, switchMap } from 'rxjs';
+import { BlogPost } from 'src/app/entities/models';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
@@ -43,7 +43,6 @@ export class BlogDetailComponent implements OnInit {
         return { ...blogPostSummary, ...blogPostDetails }
       })
     );
-
 
   }
 }
