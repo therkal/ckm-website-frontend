@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, Output } from '@angular/core';
 import * as L from 'leaflet';
 import { GeoLocation } from 'src/app/entities/models';
 import { environment } from 'src/environments/environment';
@@ -35,19 +35,31 @@ export class LeafletMapComponent implements AfterViewInit {
   private initializeGeoDataMarkers() {
     // Get initial location to set map to.
     const firstGeoLocation = this.geoLocations ? this.geoLocations[0] : { lat: 0, lon: 0 };
-    this.map = L.map('map').setView([firstGeoLocation.lat, firstGeoLocation.lon], this._DEF_MAP_ZOOM_LEVEL);
+    this.map = L.map('map');
 
+    // Create a feature group
+    const group = L.featureGroup();
+    // Add all GeoData locations on map.
     for (let location of this.geoLocations) {
       if (location.lat & location.lon) {
-        L.marker([location.lat, location.lon])
-          .bindTooltip(location.geoLocationName)
-          .openTooltip()
-          .addTo(this.map);
+        group.addLayer(
+          L.marker([location.lat, location.lon])
+            .bindTooltip(location.geoLocationName)
+            .addEventListener('click', this.tooltipClicked)
+        )
       } else {
         console.warn(`Location ${location.geoLocationName} has no lattitude and/or longtitude and will be skipped from rendering.`);
       }
-
     }
+
+    // Set map view to bounds of the group.
+    this.map.fitBounds(group.getBounds());
+    group.addTo(this.map);
+  }
+
+  tooltipClicked(e: L.LeafletEvent) {
+    console.log("Clicked!", e)
+    throw new Error("Not implemented");
   }
 
   private initializeIcons() {
