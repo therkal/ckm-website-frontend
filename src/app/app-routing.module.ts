@@ -5,8 +5,12 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { GalleriesPageComponent } from './pages/galleries-page/galleries-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
+  {
+    'path': '', component: HomePageComponent
+  },
   {
     'path': 'gallery', 'component': GalleriesPageComponent
   },

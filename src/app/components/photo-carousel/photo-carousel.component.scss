@@ -1,0 +1,22 @@
+@use 'src/app/shared/variables' as global;
+
+.background-wrapper {
+    width: 100%;
+    background-color: global.$snackbar-background-color;
+    height: 500px;
+}
+
+.image-wrapper,
+.image-wrapper>img {
+    max-width: 1024px;
+}
+
+.background-wrapper>section {
+    display: flex;
+    justify-content: center;
+}
+
+fa-icon {
+    cursor: pointer;
+    color: global.$text-color-white;
+}

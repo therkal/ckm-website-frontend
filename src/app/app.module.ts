@@ -14,7 +14,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PersonaComponent } from './components/persona/persona.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fa500px, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faArrowLeft, faArrowUp, faHeart, faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowUp, faChevronLeft, faChevronRight, faHeart, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
@@ -24,6 +24,8 @@ import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/deta
 import { MarkdownModule } from 'ngx-markdown';
 import { LeafletMapComponent } from './components/map/leaflet-map/leaflet-map.component';
 import { LeafletMarkerPopupComponent } from './components/map/leaflet-marker-popup/leaflet-marker-popup.component';
+import { PhotoCarouselComponent } from './components/photo-carousel/photo-carousel.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { LeafletMarkerPopupComponent } from './components/map/leaflet-marker-pop
     BlogDetailComponent,
     DetailPageNavBarComponent,
     LeafletMapComponent,
-    LeafletMarkerPopupComponent
+    LeafletMarkerPopupComponent,
+    PhotoCarouselComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ export class AppModule {
       faArrowLeft,
       faArrowUp,
       faShareNodes,
-      faHeart
+      faHeart,
+      faChevronLeft,
+      faChevronRight
     );
   }
 }
