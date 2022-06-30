@@ -24,7 +24,7 @@ import { DetailPageNavBarComponent } from './components/detail-page-nav-bar/deta
 import { MarkdownModule } from 'ngx-markdown';
 import { LeafletMapComponent } from './components/map/leaflet-map/leaflet-map.component';
 import { LeafletMarkerPopupComponent } from './components/map/leaflet-marker-popup/leaflet-marker-popup.component';
-import { PhotoCarouselComponent } from './components/photo-carousel/photo-carousel.component';
+import { PhotoSliderComponent } from './components/photo-slider/photo-slider.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
@@ -45,7 +45,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     DetailPageNavBarComponent,
     LeafletMapComponent,
     LeafletMarkerPopupComponent,
-    PhotoCarouselComponent,
+    PhotoSliderComponent,
     HomePageComponent
   ],
   imports: [

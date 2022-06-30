@@ -5,8 +5,11 @@
     </section>
 
     <section class="image-wrapper basis-10/12 ">
-        <img *ngIf="activeImage$ | async; let image" src="{{image.imageUrl}}" alt="{{image.title}}"
-            aria-label="image" />
+        <div *ngFor="let image of renderedImages$ | async; let i = index;" class="relative flex">
+            <img src="{{image.imageUrl}}" alt="{{image.title}}" aria-label="image" class="hidden" loading="eager"
+                [class.active]="(activeImageIndex === 0 && i === 0) || (activeImageIndex !== 0 && i === 1)" />
+        </div>
+
     </section>
 
     <section class="items-center basis-1/12">

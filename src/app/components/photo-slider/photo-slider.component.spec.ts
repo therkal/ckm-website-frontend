@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PhotoCarouselComponent } from './photo-carousel.component';
+import { PhotoSliderComponent } from './photo-slider.component';
 
 describe('PhotoCarouselComponent', () => {
-  let component: PhotoCarouselComponent;
-  let fixture: ComponentFixture<PhotoCarouselComponent>;
+  let component: PhotoSliderComponent;
+  let fixture: ComponentFixture<PhotoSliderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PhotoCarouselComponent ]
+      declarations: [PhotoSliderComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(PhotoCarouselComponent);
+    fixture = TestBed.createComponent(PhotoSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

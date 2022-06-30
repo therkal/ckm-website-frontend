@@ -1,7 +1,8 @@
 <app-detail-page-nav-bar [title]="(active$ |async)?.header" class="fixed w-full z-20"></app-detail-page-nav-bar>
 <div *ngIf="(active$ | async) as post; else loading" class="w-full relative top-10">
     <div class="top-image-wrapper">
-        <img class="image" src="{{post.imageUrl}}" alt="{{post.header}}" aria-label="Image supporting post" />
+        <img class="image" src="{{post.imageUrl}}" alt="{{post.header}}" aria-label="Image supporting post"
+            lazy-loading />
 
         <div class="text-container p-4 lg:p-2 text-center">
             <h1 class=" text-3xl">{{post.header}}</h1>

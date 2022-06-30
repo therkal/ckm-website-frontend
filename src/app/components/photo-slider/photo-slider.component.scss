@@ -20,3 +20,7 @@ fa-icon {
     cursor: pointer;
     color: global.$text-color-white;
 }
+
+.image-wrapper .active {
+    display: block !important;
+}

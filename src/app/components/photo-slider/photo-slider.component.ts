@@ -3,24 +3,31 @@ import { BehaviorSubject, combineLatest, map, Observable, Subject, Subscription,
 import { GalleryImage } from 'src/app/entities/models';
 
 @Component({
-  selector: 'app-photo-carousel',
-  templateUrl: './photo-carousel.component.html',
-  styleUrls: ['./photo-carousel.component.scss']
+  selector: 'app-photo-slider',
+  templateUrl: './photo-slider.component.html',
+  styleUrls: ['./photo-slider.component.scss']
 })
-export class PhotoCarouselComponent implements OnInit, OnDestroy {
+export class PhotoSliderComponent implements OnInit, OnDestroy {
 
   @Input() images$: Observable<GalleryImage[]> = new Observable();
 
 
   private imagesSubscription!: Subscription;
+
+  // Holds the currently rendered images (be it visible or invis)
   private rederedImagesSubject: Subject<GalleryImage[]> = new Subject();
-
   renderedImages$: Observable<GalleryImage[]> = this.rederedImagesSubject.asObservable();
-  activeImage$: Observable<GalleryImage> = new Observable();
 
-  activeImageSubject: Subject<number> = new BehaviorSubject(0);
+  activeImage$: Observable<GalleryImage> = new Observable();
+  private activeImageSubject: Subject<number> = new BehaviorSubject(0);
   activeImageIndex$: Observable<number> = this.activeImageSubject.asObservable();
   activeImageIndex: number = 0;
+
+  private previousImageSubject: Subject<GalleryImage | undefined> = new BehaviorSubject<GalleryImage | undefined>(undefined);
+  previousImage$: Observable<GalleryImage | undefined> = this.previousImageSubject.asObservable();
+
+  private nextImageSubject: Subject<GalleryImage | undefined> = new BehaviorSubject<GalleryImage | undefined>(undefined);
+  nextImage$: Observable<GalleryImage | undefined> = this.previousImageSubject.asObservable();
 
   numberOfImages: number = 0;
   hasNextImage: boolean = false;
@@ -36,7 +43,12 @@ export class PhotoCarouselComponent implements OnInit, OnDestroy {
       tap(([index, images]) => {
         this.numberOfImages = images.length;
         this.hasNextImage = this.activeImageIndex < images.length - 1;
-        this.rederedImagesSubject.next(images.slice(index, 3 + index));
+
+        let i = index !== 0 ? index - 1 : index;
+        this.rederedImagesSubject.next(images.slice(i, 2 + index));
+
+        this.previousImageSubject.next(images[index + 1]);
+        this.nextImageSubject.next(images[index + 1]);
       }),
       map(([index, images]) => {
         return images[index]
