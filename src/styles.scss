@@ -3,6 +3,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .flat-button {
     color: global.$primary-color;
     text-transform: uppercase;
