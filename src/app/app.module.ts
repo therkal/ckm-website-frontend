@@ -26,6 +26,7 @@ import { LeafletMapComponent } from './components/map/leaflet-map/leaflet-map.co
 import { LeafletMarkerPopupComponent } from './components/map/leaflet-marker-popup/leaflet-marker-popup.component';
 import { PhotoSliderComponent } from './components/photo-slider/photo-slider.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ProgressSliderComponent } from './components/progress-slider/progress-slider.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     LeafletMapComponent,
     LeafletMarkerPopupComponent,
     PhotoSliderComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProgressSliderComponent
   ],
   imports: [
     BrowserModule,

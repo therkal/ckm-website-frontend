@@ -1,6 +1,9 @@
+<app-progress-slider (hasAnimationCompletedEvent)="slideshowAnimationComplete()"
+    [shouldAnimate$]="shouldAnimateCountdown$" [duration]="6000"></app-progress-slider>
 <div class="background-wrapper flex justify-center">
     <section class="items-center basis-1/12">
-        <fa-icon [icon]="['fas', 'chevron-left']" size="lg" (click)="previousImage()" *ngIf="activeImageIndex > 0">
+        <fa-icon [icon]="['fas', 'chevron-left']" size="lg" (click)="togglePreviousImage()"
+            *ngIf="activeImageIndex > 0">
         </fa-icon>
     </section>
 
@@ -13,6 +16,6 @@
     </section>
 
     <section class="items-center basis-1/12">
-        <fa-icon [icon]="['fas', 'chevron-right']" size="lg" (click)="nextImage()" *ngIf="hasNextImage"></fa-icon>
+        <fa-icon [icon]="['fas', 'chevron-right']" size="lg" (click)="toggleNextImage()" *ngIf="hasNextImage"></fa-icon>
     </section>
 </div>
