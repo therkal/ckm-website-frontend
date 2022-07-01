@@ -1,4 +1,5 @@
-<app-progress-slider *ngIf="options && options.slideshow" [percentage$]="slideshowAnimationPercentage$">
+<app-progress-slider *ngIf="options && options.slideshow && options.slideshow.display"
+    [percentage$]="slideshowAnimationPercentage$">
 </app-progress-slider>
 <div class="background-wrapper flex justify-center" [ngStyle]="{'height.px': componentHeight}">
     <section class="items-center basis-1/12">

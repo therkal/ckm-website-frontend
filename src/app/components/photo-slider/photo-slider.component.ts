@@ -52,7 +52,7 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
 
     // Slideshow
     if (this.options && this.options.slideshow) {
-      const animationDuration = this.options.duration ? this.options.duration : 6000;
+      const animationDuration = this.options.slideshow.duration ? this.options.slideshow.duration : 6000;
       const animationObservable$ = this.animateWidthBetween(0, 100, animationDuration).pipe(
         tap((percentage) => this.slideshowAnimationPercentageSubject.next(percentage)),
         finalize(() => this.slideshowAnimationComplete())
