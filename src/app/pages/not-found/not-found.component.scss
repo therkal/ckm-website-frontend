@@ -1,0 +1,47 @@
+@use 'src/app/shared/variables' as global;
+
+.full-page-container {
+    position: relative;
+    display: flex;
+    height: calc(100vh - global.$top-nav-bar-height);
+    width: 100vw;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.full-page-container>img {
+    object-fit: cover;
+    position: absolute;
+    height: calc(100vh - global.$top-nav-bar-height);
+    width: 100vw;
+}
+
+.backToSafety {
+    margin-top: 16px;
+    // background-color: #708090;
+    background-color: #3a6c6a;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+// .full-page-container>img::after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     width: 100%;
+//     background-color: black;
+//     opacity: .7;
+//     top: 0;
+//     height: 100%;
+
+// }
+
+.full-page-container>*:not(img) {
+    z-index: 1;
+}
+
+.direction-column {
+    flex-direction: column;
+}

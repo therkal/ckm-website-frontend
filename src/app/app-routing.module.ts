@@ -6,6 +6,7 @@ import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { GalleriesPageComponent } from './pages/galleries-page/galleries-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,12 @@ const routes: Routes = [
   },
   {
     'path': 'blog/:id', 'component': BlogDetailComponent
+  },
+  {
+    'path': '404', 'component': NotFoundComponent
+  },
+  {
+    'path': '**', 'redirectTo': '404'
   }
 ];
 
