@@ -26,20 +26,15 @@
     padding: 8px 16px;
 }
 
-// .full-page-container>img::after {
-//     content: "";
-//     position: absolute;
-//     left: 0;
-//     width: 100%;
-//     background-color: black;
-//     opacity: .7;
-//     top: 0;
-//     height: 100%;
-
-// }
-
 .full-page-container>*:not(img) {
     z-index: 1;
+}
+
+.full-page-container>.content {
+    margin: 0px 16px;
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .direction-column {
