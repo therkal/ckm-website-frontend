@@ -80,6 +80,10 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Slideshow animation complete method.
+   * Toggles next image if available, and restarts loop.
+   */
   slideshowAnimationComplete() {
     this.shouldAnimateSubject.next(false);
     if (this.hasNextImage) {
@@ -93,11 +97,20 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
     }
   }
 
+
+  /**
+   * Toggles previous image
+   * ToDo: On slideshow, restart countdown
+   */
   togglePreviousImage(): void {
     this.activeImageIndex -= 1;
     this.activeImageIndexSubject.next(this.activeImageIndex);
   }
 
+  /**
+   * Toggles next image
+   * * ToDo: On slideshow, restart countdown
+   */
   toggleNextImage(): void {
     this.activeImageIndex += 1;
     this.activeImageIndexSubject.next(this.activeImageIndex);
