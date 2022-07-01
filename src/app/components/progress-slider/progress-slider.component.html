@@ -1,3 +1,3 @@
 <div class="indicator-container">
-    <div class="bar" #bar></div>
+    <div class="bar" #bar [ngStyle]="{'width.%': (percentage$ | async)}"></div>
 </div>

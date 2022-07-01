@@ -80,3 +80,11 @@ export interface BlogPost {
     // Holds locations of trip to display on Map
     geoData: [GeoLocation]
 }
+
+/**
+ * Slideshow
+ */
+export interface PhotoSliderOptions {
+    slideshow?: boolean; // Controls whether a slideshow will displayed. If left empty it will not be shown
+    duration?: number; // Controls the duration of a slide in MS. If left empty it will default to 6000ms
+}

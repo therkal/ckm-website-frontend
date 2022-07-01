@@ -1,5 +1,5 @@
-<app-progress-slider (hasAnimationCompletedEvent)="slideshowAnimationComplete()"
-    [shouldAnimate$]="shouldAnimateCountdown$" [duration]="6000"></app-progress-slider>
+<app-progress-slider *ngIf="options && options.slideshow" [percentage$]="slideshowAnimationPercentage$">
+</app-progress-slider>
 <div class="background-wrapper flex justify-center">
     <section class="items-center basis-1/12">
         <fa-icon [icon]="['fas', 'chevron-left']" size="lg" (click)="togglePreviousImage()"
