@@ -35,6 +35,8 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
 
   private animationSubscription!: Subscription;
 
+  componentHeight: number = 500;
+
   constructor() {
   }
 
@@ -64,6 +66,8 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
       // Start the animations
       this.shouldAnimateSubject.next(true);
     }
+
+    this.componentHeight = this.options.height ? this.options.height : 500;
 
   }
 

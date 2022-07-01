@@ -1,6 +1,6 @@
 <app-progress-slider *ngIf="options && options.slideshow" [percentage$]="slideshowAnimationPercentage$">
 </app-progress-slider>
-<div class="background-wrapper flex justify-center">
+<div class="background-wrapper flex justify-center" [ngStyle]="{'height.px': componentHeight}">
     <section class="items-center basis-1/12">
         <fa-icon [icon]="['fas', 'chevron-left']" size="lg" (click)="togglePreviousImage()"
             *ngIf="activeImageIndex > 0">
