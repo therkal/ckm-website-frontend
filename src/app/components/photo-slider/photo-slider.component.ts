@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { animationFrames, BehaviorSubject, combineLatest, map, Observable, Subject, Subscription, tap, takeWhile, endWith, finalize, switchMap, filter, takeUntil } from 'rxjs';
+import { animationFrames, BehaviorSubject, combineLatest, map, Observable, Subject, tap, takeWhile, endWith, finalize, switchMap, filter, takeUntil } from 'rxjs';
 import { GalleryImage, PhotoSliderOptions } from 'src/app/entities/models';
 
 @Component({
@@ -75,7 +75,16 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
     }
 
     this.componentHeight = this.options.height ? this.options.height : 500;
+  }
 
+  dotClicked(imageIndex: number) {
+    this.activeImageIndex = imageIndex;
+    this.activeImageIndexSubject.next(this.activeImageIndex);
+
+    if (this.options.slideshow) {
+      this.animationObservableDestroyed$.next(true);
+      this.shouldAnimateSubject.next(true);
+    }
   }
 
   ngOnDestroy(): void {

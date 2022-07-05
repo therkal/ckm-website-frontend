@@ -13,10 +13,15 @@
             <img src="{{image.imageUrl}}" alt="{{image.title}}" aria-label="image" class="hidden" loading="eager"
                 [class.active]="(activeImageIndex === 0 && i === 0) || (activeImageIndex !== 0 && i === 1)" />
         </div>
-
     </section>
 
     <section class="items-center basis-1/12">
         <fa-icon [icon]="['fas', 'chevron-right']" size="lg" (click)="toggleNextImage()" *ngIf="hasNextImage"></fa-icon>
     </section>
+
+    <div class="dot-container">
+        <div class="dot" *ngFor="let _ of images$ | async; let i = index;" [class.active]="activeImageIndex === i"
+            (click)="dotClicked(i)">
+        </div>
+    </div>
 </div>
