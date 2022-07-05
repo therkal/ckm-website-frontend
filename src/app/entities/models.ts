@@ -87,6 +87,7 @@ export interface BlogPost {
 export interface PhotoSliderOptions {
     slideshow?: SlideShowOptions // Controls the slideshow
     height?: number; // Controls the height of the component
+    dotNavigation?: boolean; // Controls whether the component has dot navigation
 }
 
 export interface SlideShowOptions {

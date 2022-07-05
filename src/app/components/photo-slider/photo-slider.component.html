@@ -19,7 +19,7 @@
         <fa-icon [icon]="['fas', 'chevron-right']" size="lg" (click)="toggleNextImage()" *ngIf="hasNextImage"></fa-icon>
     </section>
 
-    <div class="dot-container">
+    <div class="dot-container" *ngIf="options && options.dotNavigation">
         <div class="dot" *ngFor="let _ of images$ | async; let i = index;" [class.active]="activeImageIndex === i"
             (click)="dotClicked(i)">
         </div>
