@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { animationFrames, BehaviorSubject, combineLatest, map, Observable, Subject, Subscription, tap, takeWhile, endWith, finalize, switchMap, filter } from 'rxjs';
+import { animationFrames, BehaviorSubject, combineLatest, map, Observable, Subject, Subscription, tap, takeWhile, endWith, finalize, switchMap, filter, takeUntil } from 'rxjs';
 import { GalleryImage, PhotoSliderOptions } from 'src/app/entities/models';
 
 @Component({
@@ -11,7 +11,6 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
 
   // Input an observable with the number images to display in the slideshow.
   @Input() images$: Observable<GalleryImage[]> = new Observable();
-  private imagesSubscription!: Subscription;
 
   @Input() options!: PhotoSliderOptions;
 
@@ -33,7 +32,8 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
   slideshowAnimationPercentageSubject: Subject<number> = new BehaviorSubject(0);
   slideshowAnimationPercentage$: Observable<number> = this.slideshowAnimationPercentageSubject.asObservable();
 
-  private animationSubscription!: Subscription;
+  private readonly destroy$: Subject<boolean> = new Subject();
+  private readonly animationObservableDestroyed$: Subject<boolean> = new Subject();
 
   componentHeight: number = 500;
 
@@ -41,13 +41,14 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.imagesSubscription = combineLatest([this.activeImageIndex$, this.images$]).pipe(
+    combineLatest([this.activeImageIndex$, this.images$]).pipe(
       tap(([index, images]) => {
         this.hasNextImage = this.activeImageIndex < images.length - 1;
 
         let i = index !== 0 ? index - 1 : index;
         this.rederedImagesSubject.next(images.slice(i, 2 + index));
-      })
+      }),
+      takeUntil(this.destroy$)
     ).subscribe();
 
     // Slideshow
@@ -58,9 +59,15 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
         finalize(() => this.slideshowAnimationComplete())
       )
 
-      this.animationSubscription = this.shouldAnimate$.pipe(
+      this.shouldAnimate$.pipe(
         filter(shouldAnimate => shouldAnimate === true),
-        switchMap(() => animationObservable$)
+        switchMap(() => animationObservable$),
+        tap(percentage => {
+          if (percentage === 100 && this.hasNextImage) {
+            this.toggleNextImage();
+          }
+        }),
+        takeUntil(this.destroy$)
       ).subscribe();
 
       // Start the animations
@@ -72,12 +79,8 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.imagesSubscription) {
-      this.imagesSubscription.unsubscribe();
-    }
-    if (this.animationSubscription) {
-      this.animationSubscription.unsubscribe();
-    }
+    this.destroy$.next(true);
+    this.destroy$.complete();
   }
 
   /**
@@ -86,14 +89,10 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
    */
   slideshowAnimationComplete() {
     this.shouldAnimateSubject.next(false);
+
     if (this.hasNextImage) {
       // Reset percentage
       this.slideshowAnimationPercentageSubject.next(0);
-
-      // Toggle the actual next image.
-      this.toggleNextImage();
-      //Restart the animation loop.
-      this.shouldAnimateSubject.next(true);
     }
   }
 
@@ -105,6 +104,13 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
   togglePreviousImage(): void {
     this.activeImageIndex -= 1;
     this.activeImageIndexSubject.next(this.activeImageIndex);
+
+    if (this.options.slideshow) {
+      this.animationObservableDestroyed$.next(true);
+      this.shouldAnimateSubject.next(true);
+    }
+
+
   }
 
   /**
@@ -114,6 +120,11 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
   toggleNextImage(): void {
     this.activeImageIndex += 1;
     this.activeImageIndexSubject.next(this.activeImageIndex);
+
+    if (this.options.slideshow) {
+      this.animationObservableDestroyed$.next(true);
+      this.shouldAnimateSubject.next(true);
+    }
   }
 
   /**
@@ -131,6 +142,7 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
       takeWhile(v => v < 1),
       // Finish with 100%
       endWith(1),
+      takeUntil(this.animationObservableDestroyed$),
       // Calculate the distance traveled between start and end
       map(v => v * diff + start)
     );
