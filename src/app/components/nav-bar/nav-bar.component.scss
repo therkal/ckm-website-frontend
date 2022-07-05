@@ -74,7 +74,7 @@ nav .checkbox {
 }
 
 nav input[type="checkbox"]:checked~.mobile-menu-items {
-    transform: translateX(24px);
+    transform: translateX(0px);
 }
 
 nav input[type="checkbox"]:checked~.hamburger-lines .line1 {
