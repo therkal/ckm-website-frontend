@@ -77,16 +77,6 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
     this.componentHeight = this.options.height ? this.options.height : 500;
   }
 
-  dotClicked(imageIndex: number) {
-    this.activeImageIndex = imageIndex;
-    this.activeImageIndexSubject.next(this.activeImageIndex);
-
-    if (this.options.slideshow) {
-      this.animationObservableDestroyed$.next(true);
-      this.shouldAnimateSubject.next(true);
-    }
-  }
-
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.complete();
@@ -105,29 +95,34 @@ export class PhotoSliderComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Handles click on the dot container
+   * @param imageIndex the index of the image clicked.
+   */
+  dotClicked(imageIndex: number) {
+    this.changeActiveImageIndex(imageIndex);
+  }
 
   /**
    * Toggles previous image
-   * ToDo: On slideshow, restart countdown
    */
   togglePreviousImage(): void {
-    this.activeImageIndex -= 1;
-    this.activeImageIndexSubject.next(this.activeImageIndex);
-
-    if (this.options.slideshow) {
-      this.animationObservableDestroyed$.next(true);
-      this.shouldAnimateSubject.next(true);
-    }
-
-
+    this.changeActiveImageIndex(this.activeImageIndex - 1);
   }
 
   /**
    * Toggles next image
-   * * ToDo: On slideshow, restart countdown
    */
   toggleNextImage(): void {
-    this.activeImageIndex += 1;
+    this.changeActiveImageIndex(this.activeImageIndex + 1);
+  }
+
+  /**
+   * private helper method to change active image index and reset slideshow.
+   * @param index the image index to set it to.
+   */
+  private changeActiveImageIndex(index: number) {
+    this.activeImageIndex = index;
     this.activeImageIndexSubject.next(this.activeImageIndex);
 
     if (this.options.slideshow) {
