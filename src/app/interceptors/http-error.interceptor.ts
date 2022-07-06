@@ -20,7 +20,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
       tap({
         next: () => null,
         error: (e: HttpErrorResponse) => {
-          console.log("Here", e)
           this.snackbarService.showToast({
             message: e.message,
             dismissible: true
