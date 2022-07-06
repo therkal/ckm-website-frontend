@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
 import { fromEvent, map, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,10 +7,10 @@ import { fromEvent, map, Observable } from 'rxjs';
 })
 export class ScrollService {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  getScrollPercentage(document: Document): Observable<number> {
-    return fromEvent(document, 'scroll').pipe(
+  getScrollPercentage(): Observable<number> {
+    return fromEvent(this.document, 'scroll').pipe(
       map((e: any) => {
         const document = e.target as Document;
         const scrollingElement: any = document.scrollingElement;

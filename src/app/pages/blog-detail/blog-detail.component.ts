@@ -16,7 +16,7 @@ export class BlogDetailComponent implements OnInit {
   active$: Observable<BlogPost> = new Observable();
   scrollPercentage$: Observable<number> = new Observable();
 
-  constructor(private service: BlogService, private scrollService: ScrollService, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private service: BlogService, private scrollService: ScrollService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const getRouteParamId$ = this.route.paramMap.pipe(
@@ -48,7 +48,7 @@ export class BlogDetailComponent implements OnInit {
     );
 
     // Calculate scroll percentage on page
-    this.scrollPercentage$ = this.scrollService.getScrollPercentage(this.document);
+    this.scrollPercentage$ = this.scrollService.getScrollPercentage();
   }
 
 
