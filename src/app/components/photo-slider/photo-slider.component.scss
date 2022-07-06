@@ -5,9 +5,39 @@
     background-color: global.$snackbar-background-color;
 }
 
+.image-wrapper {
+    overflow-x: hidden;
+}
+
 .image-wrapper,
 .image-wrapper>*>img {
     object-fit: contain;
+}
+
+.image-wrapper * {
+    transform: translateX(100vw);
+    -webkit-transform: translateX(100vw);
+    -moz-transform: translateX(100vw);
+    -o-transform: translateX(100vw);
+    -ms-transform: translateX(100vw);
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+}
+
+.image-wrapper .active {
+    display: flex;
+    visibility: visible !important;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    opacity: 1;
+    transition: 0.2s all ease-in-out;
+}
+
+.image-wrapper .hidden {
+    visibility: hidden;
 }
 
 .image-wrapper div {
@@ -22,14 +52,6 @@
 fa-icon {
     cursor: pointer;
     color: global.$text-color-white;
-}
-
-.image-wrapper .active {
-    display: block !important;
-}
-
-.image-wrapper .hidden {
-    display: none;
 }
 
 .dot-container {

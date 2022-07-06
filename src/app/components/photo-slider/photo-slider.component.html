@@ -9,7 +9,8 @@
     </section>
 
     <section class="image-wrapper basis-10/12 ">
-        <div *ngFor="let image of renderedImages$ | async; let i = index;" class="relative flex">
+        <div *ngFor="let image of renderedImages$ | async; let i = index;" class="relative flex"
+            [class.active]="(activeImageIndex === 0 && i === 0) || (activeImageIndex !== 0 && i === 1)">
             <img src="{{image.imageUrl}}" alt="{{image.title}}" aria-label="image" class="hidden" loading="eager"
                 [class.active]="(activeImageIndex === 0 && i === 0) || (activeImageIndex !== 0 && i === 1)" />
         </div>
