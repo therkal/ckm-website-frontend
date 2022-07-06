@@ -13,9 +13,7 @@ import { BlogService } from 'src/app/services/blog.service';
 export class BlogDetailComponent implements OnInit {
 
   active$: Observable<BlogPost> = new Observable();
-
-  private scrollPercentageSubject: Subject<number> = new BehaviorSubject(50);
-  scrollPercentage$: Observable<number> = this.scrollPercentageSubject.asObservable();
+  scrollPercentage$: Observable<number> = new Observable();
 
   constructor(private service: BlogService, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
 
