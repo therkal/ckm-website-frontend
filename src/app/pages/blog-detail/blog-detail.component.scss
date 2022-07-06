@@ -1,5 +1,12 @@
 @use 'src/app/shared/variables' as global;
 
+app-progress-slider {
+    position: fixed;
+    top: calc(global.$top-nav-bar-height);
+    width: 100%;
+    z-index: 99;
+}
+
 .top-image-wrapper {
     position: relative;
 }

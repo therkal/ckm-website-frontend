@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, filter, map, Observable, of, switchMap } from 'rxjs';
+import { BehaviorSubject, combineLatest, filter, fromEvent, map, Observable, of, Subject, switchMap } from 'rxjs';
 import { BlogPost } from 'src/app/entities/models';
 import { BlogService } from 'src/app/services/blog.service';
 
@@ -13,7 +14,10 @@ export class BlogDetailComponent implements OnInit {
 
   active$: Observable<BlogPost> = new Observable();
 
-  constructor(private service: BlogService, private route: ActivatedRoute) { }
+  private scrollPercentageSubject: Subject<number> = new BehaviorSubject(50);
+  scrollPercentage$: Observable<number> = this.scrollPercentageSubject.asObservable();
+
+  constructor(private service: BlogService, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
     const getRouteParamId$ = this.route.paramMap.pipe(
@@ -44,6 +48,19 @@ export class BlogDetailComponent implements OnInit {
       })
     );
 
+    // Calculate scroll percentage on page
+    this.scrollPercentage$ = fromEvent(this.document, 'scroll').pipe(
+      map((e: any) => {
+        const document = e.target as Document;
+        const scrollingElement: any = document.scrollingElement;
+        const scrollTop = scrollingElement ? scrollingElement.scrollTop : 0;
+        const scrollTopMax = scrollingElement ? scrollingElement.scrollTopMax : 0;
+
+        return scrollTop / scrollTopMax * 100
+      })
+    )
   }
+
+
 }
 

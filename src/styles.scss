@@ -81,11 +81,12 @@ fa-icon {
     }
 
     h2 {
-        font-size: 1.3em;
+        font-size: 1.2em;
+        color: global.$primary-color
     }
 
     h3 {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     p {
@@ -95,5 +96,9 @@ fa-icon {
     hr {
         border-color: global.$primary-color;
         margin: 16px 0;
+    }
+
+    ol {
+        list-style: inside;
     }
 }

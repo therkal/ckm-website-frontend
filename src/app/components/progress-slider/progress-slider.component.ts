@@ -9,8 +9,10 @@ import { animationFrames, map, takeWhile, endWith, Observable, Subscription, tap
 export class ProgressSliderComponent {
 
   @Input() percentage$: Observable<number> = new Observable<number>();
+  @Input() hexColor!: string;
 
   constructor() {
   }
 
 }
+

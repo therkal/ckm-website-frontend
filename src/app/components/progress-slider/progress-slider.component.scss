@@ -1,6 +1,5 @@
 @use 'src/app/shared/variables' as global;
 
-
 .indicator-container {
     height: 5px;
     width: 100%;
@@ -8,7 +7,8 @@
 }
 
 .indicator-container .bar {
-    background-color: global.$primary-color;
+    // background-color: global.$primary-color;
+    background-color: yellow;
     height: 100%;
     width: 2%;
 }
