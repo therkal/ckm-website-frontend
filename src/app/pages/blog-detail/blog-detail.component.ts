@@ -1,9 +1,10 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, combineLatest, filter, fromEvent, map, Observable, of, Subject, switchMap } from 'rxjs';
+import { combineLatest, filter, fromEvent, map, Observable, of, switchMap } from 'rxjs';
 import { BlogPost } from 'src/app/entities/models';
 import { BlogService } from 'src/app/services/blog.service';
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -15,7 +16,7 @@ export class BlogDetailComponent implements OnInit {
   active$: Observable<BlogPost> = new Observable();
   scrollPercentage$: Observable<number> = new Observable();
 
-  constructor(private service: BlogService, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private service: BlogService, private scrollService: ScrollService, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
     const getRouteParamId$ = this.route.paramMap.pipe(
@@ -47,18 +48,7 @@ export class BlogDetailComponent implements OnInit {
     );
 
     // Calculate scroll percentage on page
-    this.scrollPercentage$ = fromEvent(this.document, 'scroll').pipe(
-      map((e: any) => {
-        const document = e.target as Document;
-        const scrollingElement: any = document.scrollingElement;
-
-        const scrollTop = scrollingElement ? scrollingElement.scrollTop : 0;
-        const scrollHeight = scrollingElement ? scrollingElement.scrollHeight : 0;
-
-
-        return scrollTop / (scrollHeight - scrollingElement.clientHeight) * 100
-      })
-    )
+    this.scrollPercentage$ = this.scrollService.getScrollPercentage(this.document);
   }
 
 
