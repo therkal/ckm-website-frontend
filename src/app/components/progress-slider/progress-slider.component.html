@@ -1,4 +1,5 @@
 <div class="indicator-container">
-    <div class="bar" *ngIf="percentage$ | async; let percentage" [ngStyle]="{'width.%': (percentage$ | async)}">
+    <div class="bar" *ngIf="percentage$ | async; let percentage"
+        [ngStyle]="{'width.%': (percentage$ | async), 'background-color': hexColor}">
     </div>
 </div>
