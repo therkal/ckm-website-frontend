@@ -57,8 +57,6 @@ jobs:
   build-and-tag-docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker build image
-
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
