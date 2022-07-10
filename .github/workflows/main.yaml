@@ -42,6 +42,11 @@ jobs:
       - name: Build Angular project
         run: yarn build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: Built Application
+          path: ./dist
+
   # test:
   #   runs-on: ubuntu-latest
 
@@ -56,6 +61,11 @@ jobs:
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: Built Application
+          path: ./dist
+
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
