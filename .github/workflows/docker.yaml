@@ -4,8 +4,7 @@ name: docker
 # Controls when the workflow will run
 on:
   workflow_run:
-    workflows:
-      - build
+    workflows: [Angular build]
     types:
       - completed
 env:
