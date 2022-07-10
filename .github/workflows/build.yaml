@@ -44,8 +44,8 @@ jobs:
           name: Built Application
           path: ./dist
 
-  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
   build-and-tag-docker:
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       # This is used to complete the identity challenge
