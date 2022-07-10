@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -25,10 +24,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      # This is used to complete the identity challenge
-      # with sigstore/fulcio when running outside of PRs.
-      id-token: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -56,6 +51,10 @@ jobs:
 
   build-and-tag-docker:
     runs-on: ubuntu-latest
+    permissions:
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
     steps:
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
