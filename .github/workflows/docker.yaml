@@ -3,11 +3,11 @@ name: docker
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "development" branch
   workflow_run:
-    workflows: ["build"]
-    types: [completed] #requested
-
+    workflows:
+      - build
+    types:
+      - completed
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
