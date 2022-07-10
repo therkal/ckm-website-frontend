@@ -2,11 +2,10 @@ name: docker
 
 # Controls when the workflow will run
 on:
-  push:
-  # workflow_run:
-  #   workflows: [Angular build]
-  #   types:
-  #     - completed
+  workflow_run:
+    workflows: [Angular build]
+    types:
+      - completed
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
