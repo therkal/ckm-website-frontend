@@ -141,4 +141,4 @@ jobs:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
           args: |
-            helm upgrade --install ${{ env.IMAGE_NAME }} ./helm -f ./helm/values.yaml --set image.tag=${{ steps.meta.outputs.tags }}
+            helm upgrade --install ${{ env.IMAGE_NAME }} ./helm -f ./helm/values.yaml --set image.tag=feature-set-up-k8s-deployment
