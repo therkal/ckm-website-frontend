@@ -7,13 +7,9 @@ env:
   OWNER: ${{ github.actor }}
   IMAGE_NAME: ${{github.event.repository.name}}
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "development" branch
   push:
     # branches: ["development", "main"]
-    # Publish semver tags as releases.
-    # tags: ["v*.*.*"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,6 +20,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
       # Sets up Node.js
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -42,17 +39,10 @@ jobs:
           path: ./dist
 
       - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          dry_run: true
-      # - name: Create a GitHub release
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     tag: ${{ steps.tag_version.outputs.new_tag }}
-      #     name: Release ${{ steps.tag_version.outputs.new_tag }}
-      #     body: ${{ steps.tag_version.outputs.changelog }}
+        uses: anothrNick/github-tag-action@1.13.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: bump_version
 
   lint:
     runs-on: ubuntu-latest
@@ -72,6 +62,8 @@ jobs:
   build-and-tag-docker:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      APP_VERSION: ${{ needs.build.bump_version.outputs.new_tag }}
     permissions:
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
@@ -114,6 +106,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.OWNER }}/${{ env.IMAGE_NAME }}
+          tag: ${{ env.APP_VERSION }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -153,4 +146,4 @@ jobs:
           HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
         with:
           args: |
-            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{}}
+            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{needs.build-and-tag-docker.env.APP_VERSION}}
