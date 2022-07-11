@@ -40,6 +40,7 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.0
         with:
+          release_branches: "main, development, hotfix/*, release/*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
     outputs:
@@ -71,9 +72,6 @@ jobs:
       id-token: write
       packages: write
     steps:
-      - name: Echo app version
-        run: echo ${{ env.APP_VERSION }}
-
       - uses: actions/checkout@v3
 
       - uses: actions/download-artifact@master
@@ -144,6 +142,7 @@ jobs:
     env:
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
     steps:
+      - uses: actions/checkout@v3
       - name: deploy to cluster
         uses: wahyd4/kubectl-helm-action@master
         env:
