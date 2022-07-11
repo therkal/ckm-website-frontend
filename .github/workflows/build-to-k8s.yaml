@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: build
+name: deploy-to-k8s
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -9,7 +9,7 @@ env:
 
 on:
   push:
-    # branches: ["development", "main"]
+    branches: ["development", "main"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -144,13 +144,11 @@ jobs:
     env:
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
     steps:
-      - uses: actions/checkout@v3
-      - run: echo ${{ env.APP_VERSION }}
-      # - name: deploy to cluster
-      #   uses: wahyd4/kubectl-helm-action@master
-      #   env:
-      #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      #     HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
-      #   with:
-      #     args: |
-      #       helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{needs.build-and-tag-docker.env.APP_VERSION}}
+      - name: deploy to cluster
+        uses: wahyd4/kubectl-helm-action@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+          HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
+        with:
+          args: |
+            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{ env.APP_VERSION }}
