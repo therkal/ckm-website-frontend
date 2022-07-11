@@ -35,7 +35,6 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      # Runs a single command using the runners shell
       - name: Build Angular project
         run: yarn build
 
@@ -43,6 +42,21 @@ jobs:
         with:
           name: Built Application
           path: ./dist
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Yarn lint
+        run: yarn lint
 
   build-and-tag-docker:
     needs: build
@@ -86,7 +100,7 @@ jobs:
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
