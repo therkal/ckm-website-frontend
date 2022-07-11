@@ -42,8 +42,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Test
-        run: echo ${{ steps.tag_version.outputs.new_tag }}
+    outputs:
+      APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
 
   lint:
     runs-on: ubuntu-latest
@@ -64,7 +64,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      APP_VERSION: ${{ needs.build.tag_version.outputs.new_tag }}
+      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
     permissions:
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
@@ -141,9 +141,11 @@ jobs:
     environment: k3s-oracle-cloud
     needs: build-and-tag-docker
     runs-on: ubuntu-latest
+    env:
+      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
     steps:
       - uses: actions/checkout@v3
-      - run: echo ${{needs.build-and-tag-docker.env.APP_VERSION}}
+      - run: echo ${{ env.APP_VERSION }}
       # - name: deploy to cluster
       #   uses: wahyd4/kubectl-helm-action@master
       #   env:
