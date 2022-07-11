@@ -1,6 +1,6 @@
 <div class="persona flex-col items-center" *ngIf="persona">
     <img src="{{persona.imageUrl}}" alt="{{persona.name}}" [ngClass]="{'invisible': isLoading}"
-        (load)="isLoading = false;" lazy-loading>
+        (load)="isLoading = false;" appLazyLoading>
     <div class="image-loading-indicator bg-slate-200 absolute top-6 animate-pulse" [ngClass]="{'hidden': !isLoading}">
     </div>
     <h1 class="flex-row text-xl lg:text-3xl border-b-[1px] border-teal-500 p-2 w-1/2 text-center m-2 lg:m-6">

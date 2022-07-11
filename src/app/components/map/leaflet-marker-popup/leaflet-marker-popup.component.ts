@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GeoLocation } from 'src/app/entities/models';
 
 @Component({
@@ -6,13 +6,8 @@ import { GeoLocation } from 'src/app/entities/models';
   templateUrl: './leaflet-marker-popup.component.html',
   styleUrls: ['./leaflet-marker-popup.component.scss']
 })
-export class LeafletMarkerPopupComponent implements OnInit {
+export class LeafletMarkerPopupComponent {
 
   @Input() geoLocation!: GeoLocation
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
