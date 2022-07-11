@@ -142,4 +142,3 @@ jobs:
         with:
           args: |
             kubectl config current-context
-            helm upgrade --install ${{ env.IMAGE_NAME }} ./helm -f ./helm/values.yaml --set image.tag=${{test}}
