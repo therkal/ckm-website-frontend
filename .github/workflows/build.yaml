@@ -71,6 +71,9 @@ jobs:
       id-token: write
       packages: write
     steps:
+      - name: Echo app version
+        run: echo ${{ env.APP_VERSION }}
+
       - uses: actions/checkout@v3
 
       - uses: actions/download-artifact@master
@@ -107,7 +110,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.OWNER }}/${{ env.IMAGE_NAME }}
-          tag: ${{ env.APP_VERSION }}
+          tags: ${{ env.APP_VERSION }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
