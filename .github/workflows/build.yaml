@@ -130,6 +130,7 @@ jobs:
         run: cosign sign ${{ steps.meta.outputs.tags }}@${{ steps.build-and-push.outputs.digest }}
 
   deploy:
+    environment: k3s-oracle-cloud
     needs: build-and-tag-docker
     runs-on: ubuntu-latest
     steps:
