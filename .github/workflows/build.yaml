@@ -139,7 +139,7 @@ jobs:
 
   deploy:
     environment: k3s-oracle-cloud
-    needs: build-and-tag-docker
+    needs: [build, build-and-tag-docker]
     runs-on: ubuntu-latest
     env:
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
