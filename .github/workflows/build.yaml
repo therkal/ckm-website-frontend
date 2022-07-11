@@ -140,6 +140,7 @@ jobs:
         uses: wahyd4/kubectl-helm-action@master
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+          HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
         with:
           args: |
-            helm upgrade --install ${{ env.IMAGE_NAME }} ./helm -f ./helm/values.yaml --set image.tag=feature-set-up-k8s-deployment
+            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=feature-set-up-k8s-deployment
