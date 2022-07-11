@@ -132,11 +132,13 @@ jobs:
   deploy:
     needs: build-and-tag-docker
     runs-on: ubuntu-latest
-    env:
-      KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
     steps:
-      - name: Create kubeconfig environment var
-        run: echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig && export KUBECONFIG=kubeconfig
-
-      - name: echo
-        run: echo ${KUBECONFIG}
+      - uses: actions/checkout@v3
+      - name: deploy to cluster
+        uses: wahyd4/kubectl-helm-action@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          args: |
+            kubectl config current-context
+            helm upgrade --install ${{ env.IMAGE_NAME }} ./helm -f ./helm/values.yaml --set image.tag=${{test}}
