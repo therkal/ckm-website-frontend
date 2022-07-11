@@ -1,5 +1,5 @@
 {
-  "name": "photography-website",
+  "name": "ckm-website-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:ghpages": "ng build --configuration=ghpages --base-href='https://therkal.github.io/photography-website/' && npx angular-cli-ghpages --dir=dist/photography-website"
+    "deploy:ghpages": "ng build --configuration=ghpages --base-href='https://therkal.github.io/ckm-website-frontend/' && npx angular-cli-ghpages --dir=dist/photography-website"
   },
   "private": true,
   "dependencies": {
