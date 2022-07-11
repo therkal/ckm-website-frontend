@@ -1,3 +1,7 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/kennethmartens/Documents/git/photography-website/.github/workflows/build.yaml",
+        "https://json.schemastore.org/chart.json": "file:///Users/kennethmartens/Documents/git/photography-website/deploy/photography-website-frontend/templates/ingress.yaml"
+    }
 }
