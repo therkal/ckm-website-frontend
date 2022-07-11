@@ -132,6 +132,11 @@ jobs:
   deploy:
     needs: build-and-tag-docker
     runs-on: ubuntu-latest
+    env:
+      KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
     steps:
-      - name: Check config data
-        run: echo "Hello"
+      - name: Create kubeconfig environment var
+        run: echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig && export KUBECONFIG=kubeconfig
+
+      - name: echo
+        run: echo ${KUBECONFIG}
