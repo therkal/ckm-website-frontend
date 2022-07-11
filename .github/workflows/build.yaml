@@ -132,11 +132,6 @@ jobs:
   deploy:
     needs: build-and-tag-docker
     runs-on: ubuntu-latest
-    permissions:
-      packages: read
-
-    env:
-      KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
     steps:
       - name: Check config data
-        run: echo ${{KUBE_CONFIG_DATA}}
+        run: echo "Hello"
