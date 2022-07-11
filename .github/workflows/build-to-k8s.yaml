@@ -40,7 +40,7 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.0
         with:
-          release_branches: "main, development, hotfix/*, release/*"
+          release_branches: "main,hotfix/*,release/*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
     outputs:
