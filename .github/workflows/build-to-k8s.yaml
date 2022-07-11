@@ -44,6 +44,7 @@ jobs:
 
     outputs:
       APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
+      APP_CHANGELOG: ${{ steps.tag_version.outputs.changelog }}
 
   lint:
     runs-on: ubuntu-latest
@@ -59,6 +60,20 @@ jobs:
 
       - name: Yarn lint
         run: yarn lint
+
+  tag-commit:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
+      APP_CHANGELOG: ${{ needs.build.outputs.CHANGELOG }}
+    steps:
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.APP_VERSION }}
+          name: Release ${{ env.APP_VERSION }}
+          body: ${{ env.APP_CHANGELOG }}
 
   build-and-tag-docker:
     needs: build

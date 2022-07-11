@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+name: deploy-to-k8s
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  OWNER: ${{ github.actor }}
+  IMAGE_NAME: ${{github.event.repository.name}}
+
+on:
+  push:
+    branches: ["development", "main"]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Sets up Node.js
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build Angular project
+        run: yarn build
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: Built Application
+          path: ./dist
+
+    outputs:
+      APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
