@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "photography-website-frontend.fullname" . }}
+  name: {{ include "ckm-website-frontend.fullname" . }}
   labels:
-    {{- include "photography-website-frontend.labels" . | nindent 4 }}
+    {{- include "ckm-website-frontend.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "photography-website-frontend.selectorLabels" . | nindent 6 }}
+      {{- include "ckm-website-frontend.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "photography-website-frontend.selectorLabels" . | nindent 8 }}
+        {{- include "ckm-website-frontend.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "photography-website-frontend.serviceAccountName" . }}
+      serviceAccountName: {{ include "ckm-website-frontend.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:

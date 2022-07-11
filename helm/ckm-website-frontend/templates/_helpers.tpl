@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "photography-website-frontend.name" -}}
+{{- define "ckm-website-frontend.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "photography-website-frontend.fullname" -}}
+{{- define "ckm-website-frontend.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "photography-website-frontend.chart" -}}
+{{- define "ckm-website-frontend.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "photography-website-frontend.labels" -}}
-helm.sh/chart: {{ include "photography-website-frontend.chart" . }}
-{{ include "photography-website-frontend.selectorLabels" . }}
+{{- define "ckm-website-frontend.labels" -}}
+helm.sh/chart: {{ include "ckm-website-frontend.chart" . }}
+{{ include "ckm-website-frontend.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "photography-website-frontend.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "photography-website-frontend.name" . }}
+{{- define "ckm-website-frontend.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "ckm-website-frontend.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "photography-website-frontend.serviceAccountName" -}}
+{{- define "ckm-website-frontend.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "photography-website-frontend.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "ckm-website-frontend.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

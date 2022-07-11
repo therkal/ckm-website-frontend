@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "photography-website-frontend.fullname" . }}
+  name: {{ include "ckm-website-frontend.fullname" . }}
   labels:
-    {{- include "photography-website-frontend.labels" . | nindent 4 }}
+    {{- include "ckm-website-frontend.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "photography-website-frontend.fullname" . }}
+    name: {{ include "ckm-website-frontend.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

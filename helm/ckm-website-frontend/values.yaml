@@ -1,14 +1,14 @@
-# Default values for photography-website-frontend.
+# Default values for ckm-website-frontend.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/therkal/photography-website
+  repository: ghcr.io/therkal/ckm-website-frontend
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "feature-set-up-k8s-deployment"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
