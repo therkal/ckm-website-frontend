@@ -44,6 +44,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: bump_version
 
+      - name: Test version bump_version
+        run: echo ${{ steps.bump_version.outputs.new_tag }}
+
   lint:
     runs-on: ubuntu-latest
     steps:
