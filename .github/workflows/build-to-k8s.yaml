@@ -47,7 +47,7 @@ jobs:
       APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
       APP_CHANGELOG: ${{ steps.tag_version.outputs.changelog }}
 
-  tag-commit:
+  create-release:
     needs: build
     runs-on: ubuntu-latest
     env:
@@ -150,4 +150,4 @@ jobs:
           HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
         with:
           args: |
-            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{ env.APP_VERSION }}
+            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{ env.APP_VERSION }} --namespace production
