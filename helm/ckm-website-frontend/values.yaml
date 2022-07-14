@@ -50,10 +50,14 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: 150.136.4.178
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+    paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ckm-website-frontend
+            port:
+              number: 8080
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
