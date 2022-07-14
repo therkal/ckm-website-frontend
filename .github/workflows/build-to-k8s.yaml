@@ -9,7 +9,7 @@ env:
 
 on:
   push:
-    branches: ["development", "main"]
+    # branches: ["development", "main"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,7 +47,7 @@ jobs:
       APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
       APP_CHANGELOG: ${{ steps.tag_version.outputs.changelog }}
 
-  tag-commit:
+  create-release:
     needs: build
     runs-on: ubuntu-latest
     env:
