@@ -48,7 +48,7 @@ ingress:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
   hosts:
-    - host: ckm.indigo-it.nl
+    - host:
       paths:
         - path: /
           pathType: ImplementationSpecific
