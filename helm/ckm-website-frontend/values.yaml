@@ -51,7 +51,7 @@ ingress:
     - host:
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
           backend:
             service:
               name: ckm-website-frontend
