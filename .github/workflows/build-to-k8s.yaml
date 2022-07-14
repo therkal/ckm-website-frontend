@@ -47,19 +47,19 @@ jobs:
       APP_VERSION: ${{ steps.tag_version.outputs.new_tag }}
       APP_CHANGELOG: ${{ steps.tag_version.outputs.changelog }}
 
-  create-release:
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
-      APP_CHANGELOG: ${{ needs.build.outputs.CHANGELOG }}
-    steps:
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ env.APP_VERSION }}
-          name: Release ${{ env.APP_VERSION }}
-          body: ${{ env.APP_CHANGELOG }}
+  # create-release:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
+  #     APP_CHANGELOG: ${{ needs.build.outputs.CHANGELOG }}
+  #   steps:
+  #     - name: Create a GitHub release
+  #       uses: ncipollo/release-action@v1
+  #       with:
+  #         tag: ${{ env.APP_VERSION }}
+  #         name: Release ${{ env.APP_VERSION }}
+  #         body: ${{ env.APP_CHANGELOG }}
 
   build-and-tag-docker:
     needs: build
@@ -150,4 +150,4 @@ jobs:
           HELM_FILE_BASE_PATH: ./helm/${{ env.IMAGE_NAME }}
         with:
           args: |
-            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{ env.APP_VERSION }}
+            helm upgrade --install ${{ env.IMAGE_NAME }} ${{ ENV.HELM_FILE_BASE_PATH }} -f ${{ENV.HELM_FILE_BASE_PATH}}/values.yaml --set image.tag=${{ env.APP_VERSION }} --namespace production
